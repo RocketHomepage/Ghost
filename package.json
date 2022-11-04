@@ -1,18 +1,25 @@
 {
-  "name": "hello-next",
+  "name": "newapp",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start"
-  },
-  "engines": {
-    "node": ">=16"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "animate.css": "^4.1.1",
+    "jquery": "^3.6.1",
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "wow.js": "^1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1"
   }
 }
