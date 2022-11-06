@@ -3,7 +3,6 @@ import jquery from "jquery";
 import Slider_home from "../component/home_slider";
 import Right_1 from "../Images/right-1.jpg";
 import pp_img from "../Images/pp-img.jpg";
-import Image from "next/image";
 import we_1 from "../Images/we-1.jpg";
 
 import { useEffect } from "react";
@@ -70,7 +69,7 @@ const Home = () => {
               </div>
             </div>
             <div className="we-right-text">
-              <Image src={Right_1} alt="logo" />
+              <img src={Right_1} alt="logo" />
             </div>
           </div>
         </div>
@@ -81,7 +80,7 @@ const Home = () => {
             <div className="pricing-left">
               <div className="pl-text">
                 <div className="img-pl">
-                  <Image src={pp_img} alt="pp-img" />
+                  <img src={pp_img} alt="pp-img" />
                 </div>
                 <div className="slider-pl">
                   <div className="testimonial-box wow animate__fadeInUp">
@@ -245,7 +244,7 @@ const Home = () => {
             </div>
             <div className="we-right">
               <div className="we-img">
-                <Image
+                <img
                   src={we_1}
                   alt="we-1"
                   class="wow animate__fadeInUp"
