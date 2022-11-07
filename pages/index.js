@@ -55,7 +55,7 @@ const Home = () => {
                     data-wow-delay=".3s"
                     data-wow-duration="2s"
                   >
-                    Get Started
+                    Preise
                   </a>
                   <a
                     href="#"
@@ -63,7 +63,7 @@ const Home = () => {
                     data-wow-delay=".5s"
                     data-wow-duration="2s"
                   >
-                    Learn More <i className="fal fa-arrow-right"></i>
+                    Kontakt <i className="fal fa-arrow-right"></i>
                   </a>
                 </div>
               </div>

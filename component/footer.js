@@ -34,10 +34,8 @@ const Footer = () => {
                 <div className="footer-logo">
                   <Image src={F_logo} alt="F_logo" />
                 </div>
-
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis, pulvinar.
+                  Passion in Wort & Schrift
                 </p>
                 <div className="footer-social">
                   <Link href="#">
@@ -106,8 +104,8 @@ const Footer = () => {
                       <i className="fas fa-map-marker-alt"></i>
                     </span>
                     <span className="fbdes-text">
-                      Enigma Writing
-                      Berliner Straße 29
+                      Enigma Writing 
+                      Berliner Straße 29 
                       65439 Flörsheim am Main
                     </span>
                   </li>
@@ -115,13 +113,13 @@ const Footer = () => {
                     <span className="fb-icon">
                       <i className="fas fa-phone-alt"></i>
                     </span>
-                    <span className="fbdes-text">(+62) 81 2345 6789</span>
+                    <span className="fbdes-text">+49 (0)176 5913 6815</span>
                   </li>
                   <li>
                     <span className="fb-icon">
                       <i className="fas fa-envelope"></i>
                     </span>
-                    <span className="fbdes-text">writern@domain.com</span>
+                    <span className="fbdes-text">info@enigma-writing.de</span>
                   </li>
                   <li>
                     <span className="fb-icon">
