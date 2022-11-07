@@ -369,7 +369,7 @@ const Home = () => {
             data-wow-duration="2s"
           >
             <h2>
-              BEREICH<span> LEISTUNGEN </span>
+              <span>LEISTUNGEN </span>
             </h2>
           </div>
           <div className="flex">

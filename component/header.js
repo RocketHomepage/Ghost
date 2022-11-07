@@ -41,7 +41,7 @@ const header = () => {
                 <a href="#">ÜBER UNS</a>
               </li>
               <li>
-                <a href="#">BEREICH LEISTUNGEN</a>
+                <a href="#">LEISTUNGEN</a>
               </li>
               <li>
                 <a href="#">KONTAKT</a>
