@@ -37,50 +37,33 @@ const Footer = () => {
                 <p>
                   Passion in Wort & Schrift
                 </p>
-                <div className="footer-social">
-                  <Link href="#">
-                    <a>                    
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                  </Link>
-                  <Link href="#">
-                    <a>                    
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  </Link>
-                  <Link href="#">
-                    <a>                    
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </Link>
-                  <Link href="#">
-                    <a>                    
-                      <i className="fab fa-youtube"></i>
-                    </a>
-                  </Link>
-                </div>
               </div>
               <div className="footer-box fb-2">
                 <h4>Quick Links</h4>
                 <ul>
                   <li>
-                    <Link href="#">
-                    <a>HOME</a>
+                    <Link href="#HOME">
+                      <a>HOME</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#">
-                    <a>ÜBER UNS</a>
+                    <Link href="#UBERUNS">
+                      <a>ÜBER UNS</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#">
-                    <a>LEISTUNGEN</a>
+                    <Link href="#PREISE">
+                      <a>PREISE</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#">
-                    <a>KONTAKT</a>
+                    <Link href="#LEISTUNGEN">
+                      <a>LEISTUNGEN</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#KONTAKT">
+                      <a>KONTAKT</a>
                     </Link>
                   </li>
                 </ul>
@@ -92,7 +75,7 @@ const Footer = () => {
                     <a href="/datenschutzerklarung">DATENSCHUTZERKLÄRUNG</a>
                   </li>
                   <li>
-                    <a href="/imprint">IMPRINT</a>
+                    <a href="/imprint">IMPRESSUM</a>
                   </li>
                 </ul>
               </div>

@@ -309,10 +309,10 @@ img {
     width: 100%;
 }
 
-a.len-btn {
+.len-btn {
     padding: 15px 25px 15px 25px;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: bold;
     color: var(--des_color);
     transition: all 0.3s ease-in;
     transform: translateX(0);
@@ -662,6 +662,10 @@ a.len-btn:hover {
     color: var(--secondary_color);
 }
 
+.contactform .heading-sec h2 span {
+    color: var(--white_color);
+}
+
 .we-left {
     padding: 0px 15px;
     width: 50%;
@@ -686,7 +690,7 @@ a.len-btn:hover {
     line-height: 55px;
     letter-spacing: 1.2px;
     margin: 0;
-    margin-bottom: 18px;
+    text-align: center;
 }
 
 .ex-box {
@@ -1471,6 +1475,7 @@ section.content-sec .heading-sec {
 .heading-sec {
     z-index: 32;
     position: relative;
+    margin-bottom: 40px;
 }
 
 section.dots-sec .heading-sec {
@@ -1728,6 +1733,7 @@ input:focus {
 .fb-2 ul li {
     list-style: none;
     margin-bottom: 13px;
+    display: flex;
 }
 
 .fb-2 ul li:last-child {
@@ -2092,6 +2098,14 @@ span.fbdes-text {
     margin: 0 0 70px;
 }
 
+.address-desc p {
+    display: flex;
+}
+
+.address-desc p i {
+    margin-top: 5px;
+}
+
 .logo-desc p,
 .address-desc p,
 .copy-right {
@@ -2195,6 +2209,42 @@ span.fbdes-text {
 
 .droup-main {
     display: flex;
+}
+
+.contactform {
+    box-shadow: 0px 10px 15px 0px rgb(0 0 0 / 10%);
+    margin: -90px 0px 0px 0px;
+    padding: 50px 50px 50px 50px;
+    background-color: var(--secondary_color);
+    justify-content: center;
+    display: flex;
+    margin-top: 100px;
+}
+
+.contactform form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    color: var(--white_color);
+}
+
+.contactform form input,
+.contactform form textarea {
+    padding: 10px;
+    background: none;
+    border: 2px var(--white_color) solid;
+    border-radius: 4px;
+    color: var(--white_color);
+    margin-bottom: 16px;
+}
+
+.contactform form textarea {
+    height: 100px;
+}
+
+.contactform form button {
+    background: var(--primary_color);
+    color: var(--white_color);
 }
 
 @media (max-width:1200px) {

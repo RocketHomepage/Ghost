@@ -1,9 +1,12 @@
+import Link from 'next/link'
 import jquery from "jquery";
+import { useState } from "react";
 import Image from 'next/image'
 import Slider_home from "../component/home_slider";
 import Right_1 from "../Images/right-1.jpg";
 import pp_img from "../Images/pp-img.jpg";
 import we_1 from "../Images/we-1.jpg";
+
 
 import { useEffect } from "react";
 
@@ -23,10 +26,31 @@ const Home = () => {
     });
     wow.init();
   }, []);
+const [submitted, setSubmitted] = useState(false);
+
+  const Userdata = async (event) => {
+    event.preventDefault();
+    console.log("Sending");
+    setSubmitted(true);
+
+    let userdata = {
+      Name: event.target.Name.value,
+      Email: event.target.Email.value,
+      Message: event.target.Message.value,
+    };
+
+    const res = await fetch("/api/mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userdata),
+    });
+  };
 
   return (
     <>
-      <section className="writern-sec-1">
+      <section className="writern-sec-1" id="HOME">
         <div className="overlay"></div>
         <div className="wp-pro-sec">
           <div className="flex m-0">
@@ -118,7 +142,7 @@ const Home = () => {
                     />
                   </div>
                   
-                  <div className="finalamount" id="finalamount">
+                  <div className="finalamount" id="inalamount">
                     {/* {currentSum} */}
                   </div>
                   <div className="sub-btn">
@@ -136,7 +160,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="amazing-sec">
+      <section className="amazing-sec" id="UBERUNS">
         <div className="container">
           <div className="flex">
             <div className="we-left full">
@@ -250,8 +274,17 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="our-price-wrapper">
+      <section className="our-price-wrapper" id="PREISE">
         <div className="container">
+          <div
+            className="heading-sec wow animate__fadeInUp"
+            data-wow-delay="0s"
+            data-wow-duration="2s"
+          >
+            <h2>
+              <span>PREISE</span>
+            </h2>
+          </div>
           <div className="our-price-flex flex">
             <div
               className="our-price-inner wow animate__fadeInUp"
@@ -361,7 +394,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <section className="ws-sec">
+      <section className="ws-sec" id="LEISTUNGEN">
         <div className="container">
           <div
             className="heading-sec wow animate__fadeInUp"
@@ -462,6 +495,53 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section className="contactform" id="KONTAKT">
+        <form onSubmit={(e) => Userdata(e)}>
+          <div
+            className="heading-sec wow animate__fadeInUp"
+            data-wow-delay="0s"
+            data-wow-duration="2s"
+          >
+            <h2>
+              <span>KONTAKT </span>
+            </h2>
+          </div>
+          <h3>Fülle das Formular aus, um uns eine Nachricht zu senden</h3>
+          <input
+            placeholder="Dein Name"
+            name="Name"
+            type="text"
+            autoComplete="name"
+            required
+          />
+          <input
+            placeholder="Deine E-Mail"
+            name="Email"
+            type="email"
+            autoComplete="email"
+            required
+          />
+          <textarea
+            placeholder="Deine Nachricht"
+            name="Message"
+            type="textarea"
+            autoComplete="message"
+            required
+          ></textarea>
+          <p>
+            Ich willige mit dem Senden meiner Anfrage ein, dass die von mir
+            überreichten Informationen und Kontaktdaten dazu verwendet werden
+            dürfen, um mit mir anlässlich meiner Kontaktaufnahme in Verbindung
+            zu treten, hierüber zu kommunizieren und meine Anfrage abzuwickeln.
+            Dies gilt insbesondere für die Verwendung der E-Mail-Adresse und der
+            Telefonnummer zum vorgenannten Zweck.
+          </p>
+          <button type="submit" className="len-btn">
+            Absenden
+          </button>
+          {submitted == true ? alert("submitted") : ""}
+        </form>
       </section>
     </>
   );

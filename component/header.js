@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 import Image from "next/image";
 import Logo from "../Images/logo.png";
 import Menu from "../Images/menu.png";
@@ -20,9 +20,12 @@ const header = () => {
         <div className="head-box menu-box" id="topnav">
           <div className="menu-box-sub">
             <div className="mobile-logo">
-              <a href="#">
-                <Image src={Logo} alt="logo" />
-              </a>
+              <Link href="/">
+                <a>
+                  <Image src={Logo} alt="logo" />
+                </a>
+              </Link>               
+              
               <div className="close-btn">
                 <span
                   href="javascript:void(0)"
@@ -35,16 +38,29 @@ const header = () => {
             </div>
             <ul className="droup-main">
               <li>
-                <a href="#">HOME</a>
+                <Link href="#HOME">
+                  <a>HOME</a>
+                </Link>
               </li>
               <li>
-                <a href="#">ÜBER UNS</a>
+                <Link href="#UBERUNS">
+                  <a>ÜBER UNS</a>
+                </Link>
               </li>
               <li>
-                <a href="#">LEISTUNGEN</a>
+                <Link href="#PREISE">
+                  <a>PREISE</a>
+                </Link>
               </li>
               <li>
-                <a href="#">KONTAKT</a>
+                <Link href="#LEISTUNGEN">
+                  <a>LEISTUNGEN</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="#KONTAKT">
+                  <a>KONTAKT</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -104,15 +120,16 @@ const header = () => {
               <h3>Adresse</h3>
               <div className="address-desc">
                 <p>
-                  <i className="fas fa-map-marker-alt"></i>Enigma Writing
-                  Berliner Straße 29
-                  65439 Flörsheim am Main
+                  <i className="fas fa-map-marker-alt"></i>Enigma Writing <br></br>
+                    Alexander Wagner <br></br>
+                    Mergenthalerallee 73-75 <br></br>
+                    65760 Eschborn
                 </p>
                 <p>
-                  <i className="fas fa-envelope-open"></i>writern@domain.com
+                  <i className="fas fa-envelope-open"></i>info@enigma-writing.de
                 </p>
                 <p>
-                  <i className="fas fa-phone-alt"></i>(+62) 800-567-8990
+                  <i className="fas fa-phone-alt"></i> +49 (0)176 5913 6815
                 </p>
               </div>
             </div>
