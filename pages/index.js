@@ -138,7 +138,7 @@ const [submitted, setSubmitted] = useState(false);
                       type="number"
                       name="quantity"
                       id="counts"
-                      placeholder="Number of words per article"
+                      placeholder="Seitenzahl insgesamt"
                     />
                   </div>
                   
