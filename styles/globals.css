@@ -1610,7 +1610,7 @@ section.dots-sec .heading-sec a.len-btn {
 
 .main-footer {
     background-color: var(--primary_color);
-    padding: 100px 0px;
+    padding: 100px 0px 50px;
 }
 
 .main-footer .paget-box a.len-btn i {
