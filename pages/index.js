@@ -509,34 +509,37 @@ const [submitted, setSubmitted] = useState(false);
           </div>
           <h3>Fülle das Formular aus, um uns eine Nachricht zu senden</h3>
           <input
-            placeholder="Dein Name"
+            placeholder="Name"
             name="Name"
             type="text"
             autoComplete="name"
             required
           />
           <input
-            placeholder="Deine E-Mail"
+            placeholder="E-Mail"
+            name="Email"
+            type="email"
+            autoComplete="email"
+            required
+          />
+          <input
+            placeholder="Telefon"
             name="Email"
             type="email"
             autoComplete="email"
             required
           />
           <textarea
-            placeholder="Deine Nachricht"
+            placeholder="Nachricht"
             name="Message"
             type="textarea"
             autoComplete="message"
             required
           ></textarea>
-          <p>
-            Ich willige mit dem Senden meiner Anfrage ein, dass die von mir
-            überreichten Informationen und Kontaktdaten dazu verwendet werden
-            dürfen, um mit mir anlässlich meiner Kontaktaufnahme in Verbindung
-            zu treten, hierüber zu kommunizieren und meine Anfrage abzuwickeln.
-            Dies gilt insbesondere für die Verwendung der E-Mail-Adresse und der
-            Telefonnummer zum vorgenannten Zweck.
-          </p>
+          <p>Bitte wählen Sie aus, über welchen Weg wir Sie kontaktieren dürfen:</p>
+          <div><input type="checkbox" />Email</div>
+          <div><input type="checkbox" />Telefon</div>          
+          <p>Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@enigma-writing.de widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer Datenschutzerklärung.</p>
           <button type="submit" className="len-btn">
             Absenden
           </button>
