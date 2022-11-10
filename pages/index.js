@@ -50,11 +50,11 @@ const Home = () => {
   const options = [
     { labe: "35", label: "Bitte wählen", value: " Bitte wählen" },
     {
-      labe: "40",
+      labe: "39",
       label: "Hausarbeit / Seminararbeit",
       value: "Hausarbeit / Seminararbeit",
     },
-    { labe: "50", label: "Masterthesis", value: "Masterthesis" },
+    { labe: "45", label: "Masterthesis", value: "Masterthesis" },
   ];
 
   const sendEmail = (e) => {
