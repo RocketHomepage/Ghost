@@ -3041,3 +3041,15 @@ span.fbdes-text {
         margin-top: 0;
     }
 }
+#typeitem > div.css-1s2u09g-control {
+    /* background: none; */
+    border-bottom: solid var(--whitegrey_color);
+    border-left:none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    
+}
+#typeitem .react-select-4-placeholder {
+    color: #fff;
+}

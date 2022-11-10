@@ -14,9 +14,12 @@ const header = () => {
   return (
     <>
       <div className="header">
-        <div className="head-box logo-box">
-          <Image src={Logo} alt="logo" />
-        </div>
+        
+        <Link href="/" className="head-box logo-box">
+          <a>
+            <Image src={Logo} alt="logo" />
+          </a>
+        </Link>
         <div className="head-box menu-box" id="topnav">
           <div className="menu-box-sub">
             <div className="mobile-logo">
@@ -38,27 +41,27 @@ const header = () => {
             </div>
             <ul className="droup-main">
               <li>
-                <Link href="#HOME">
+                <Link href="/#HOME">
                   <a>HOME</a>
                 </Link>
               </li>
               <li>
-                <Link href="#UBERUNS">
+                <Link href="/#UBERUNS">
                   <a>ÜBER UNS</a>
                 </Link>
               </li>
               <li>
-                <Link href="#PREISE">
+                <Link href="/#PREISE">
                   <a>PREISE</a>
                 </Link>
               </li>
               <li>
-                <Link href="#LEISTUNGEN">
+                <Link href="/#LEISTUNGEN">
                   <a>LEISTUNGEN</a>
                 </Link>
               </li>
               <li>
-                <Link href="#KONTAKT">
+                <Link href="/#KONTAKT">
                   <a>KONTAKT</a>
                 </Link>
               </li>
