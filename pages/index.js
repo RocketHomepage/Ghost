@@ -166,7 +166,7 @@ const Home = () => {
                 <h3>Preisrechner</h3>
                 <form onSubmit={sendEmail}>
                   <div className="input-box">
-                    <label>Category</label>
+                    <label>Thema</label>
                     <Select
                       id="typeitem"
                       type="string"
@@ -176,11 +176,11 @@ const Home = () => {
                         setvalue6(e.labe);
                         setvalue1(e.value);
                       }}
-                      placeholder="please select Thema"
+                      placeholder="Bitte wählen"
                     />
                   </div>
                   <div className="input-box">
-                    <label>AnzahlSeiten</label>
+                    <label>Anzahl Seiten</label>
                     <input
                       type="number"
                       name="AnzahlSeiten"
@@ -193,7 +193,7 @@ const Home = () => {
                   </div>
                   {/* adding input values */}
                   <div className="input-box">
-                    <label>Total</label>
+                    <label>Insgesamt</label>
                     <input
                       type="number"
                       name="totals"
@@ -203,19 +203,19 @@ const Home = () => {
                     />
                   </div>
                   <div className="input-box">
-                    <label>name</label>
+                    <label>Name</label>
                     <input
                       type="string"
-                      name="name"
+                      name="Name"
                       id="counts"
                       onChange={(e) => setvalue3(e.target.value)}
                     />
                   </div>
                   <div className="input-box">
-                    <label>Email</label>
+                    <label>E-Mail</label>
                     <input
                       type="string"
-                      name="Email"
+                      name="E-Mail"
                       id="counts"
                       value={value5}
                       onChange={(e) => setvalue5(e.target.value)}
