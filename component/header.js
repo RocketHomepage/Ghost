@@ -62,7 +62,7 @@ const header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/#UBERUNS">
+                <Link href="/#UEBERUNS">
                   <a>ÜBER UNS</a>
                 </Link>
               </li>
