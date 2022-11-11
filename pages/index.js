@@ -118,7 +118,7 @@ const Home = () => {
                 </p>
                 <div className="btn-we">
                   <a
-                    href="#"
+                    href="#PREISE"
                     className="get-btn btn-primary wow animate__fadeInUp"
                     data-wow-delay=".3s"
                     data-wow-duration="2s"
@@ -126,7 +126,7 @@ const Home = () => {
                     Preise
                   </a>
                   <a
-                    href="#"
+                    href="#KONTAKT"
                     className="len-btn wow animate__fadeInUp"
                     data-wow-delay=".5s"
                     data-wow-duration="2s"
