@@ -34,7 +34,6 @@ const Imprint = () => {
           <p>65760 Eschborn</p>
           <br></br>
           <p>Umsatzsteuer-Identifikationsnummer gemäß §27 a</p>
-          <p>USt-ID: </p>
           <br></br>
           <p>Email: info[ad]enigma-writing.de</p>
           <p>Web: <Link href="https://www.enigma-writing.de" target="_blank">https://www.enigma-writing.de</Link></p>

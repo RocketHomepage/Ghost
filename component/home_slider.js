@@ -74,12 +74,11 @@ const slider_home = () => {
                 <div className="test-head">
                   <div className="text-hh">
                     <h4>Markus B.</h4>
-                    <p>Client</p>
+                    <p>Kunde</p>
                   </div>
                 </div>
                 <div className="jon-text">
-                  ich war mit der Leistung sehr zufrieden. Kann ich auf jeden
-                  Fall empfehlen.
+                  Danke für die schnelle und komplizierte Hilfe
                 </div>
               </div>
             </div>
@@ -90,7 +89,7 @@ const slider_home = () => {
                 <div className="test-head">
                   <div className="text-hh">
                     <h4>Laura H.</h4>
-                    <p>Client</p>
+                    <p>Kunde</p>
                   </div>
                 </div>
                 <div className="jon-text">

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from "next/image";
 import Logo from "../Images/logo.png";
 import Menu from "../Images/menu.png";
+import React, { useEffect } from "react";
 
 const openSearch = (e) => {
   document.getElementById("myOverlay").style.display = "block";
@@ -11,6 +12,21 @@ const closeSearch = (e) => {
 };
 
 const header = () => {
+  // Sticky Menu Area
+  useEffect(() => {
+    window.addEventListener('scroll', isSticky);
+    return () => {
+        window.removeEventListener('scroll', isSticky);
+    };
+});
+
+       
+/* Method that will fix header after a specific scrollable */
+       const isSticky = (e) => {
+            const header = document.querySelector('.header');
+            const scrollTop = window.scrollY;
+            scrollTop >= 250 ? header.classList.add('is-sticky') : header.classList.remove('is-sticky');
+        };
   return (
     <>
       <div className="header">

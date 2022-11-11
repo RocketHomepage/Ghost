@@ -87,9 +87,10 @@ const Footer = () => {
                       <i className="fas fa-map-marker-alt"></i>
                     </span>
                     <span className="fbdes-text">
-                      Enigma Writing 
-                      Berliner Straße 29 
-                      65439 Flörsheim am Main
+                      Enigma Writing <br></br>
+                      Alexander Wagner <br></br>
+                      Mergenthalerallee 73-75 <br></br>
+                      65760 Eschborn
                     </span>
                   </li>
                   <li>

@@ -195,10 +195,10 @@ const Home = () => {
                   <div className="input-box">
                     <label>Insgesamt</label>
                     <input
-                      type="number"
+                      type="text"
                       name="totals"
                       id="counts"
-                      value={value6 * value2}
+                      value={value6 * value2 + " Є"}
                       onChange={(e) => console.log(setvalue4(value6 * value2))}
                     />
                   </div>
@@ -247,7 +247,7 @@ const Home = () => {
                       id="calculate"
                       type="submit"
                     >
-                      Send
+                      Senden
                     </button>
                   </div>
                 </form>
@@ -270,7 +270,7 @@ const Home = () => {
                 <p>
                   Bei der Vielzahl der Webseiten zum Thema Ghostwriting
                   empfinden viele Kunden die Suche nach der richtigen Agentur
-                  oftmals sehr frustrierend. Daher zeigen ich Ihnen nun ein paar
+                  oftmals sehr frustrierend. Daher zeige ich Ihnen nun ein paar
                   Vorteile, die ich Ihnen bieten kann:
                 </p>
                 <div class="pro-ul">
@@ -295,7 +295,7 @@ const Home = () => {
                         <i class="fas fa-check-circle"></i>
                       </span>
                       <span class="text-li">
-                        Bei uns gibt es keinen Agenturaufschläge, sodass wir
+                        Bei uns gibt es keinen Agenturaufschlag, sodass wir
                         Ihnen das Schreiben Ihrer wissenschaftlichen Arbeit in
                         der Regel für einen Preis von ca. 35-45 EUR pro
                         Textseite anbieten können.
@@ -306,10 +306,20 @@ const Home = () => {
                         <i class="fas fa-check-circle"></i>
                       </span>
                       <span class="text-li">
+                        Überarbeitungen (beispielsweise nach Ihrer Rücksprache mit dem
+                        Dozenten) sind in unseren Preisen enthalten. Jeder Auftrag
+                        wird mit einer Plagiatsprüfung ausgeliefert
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        <i class="fas fa-check-circle"></i>
+                      </span>
+                      <span class="text-li">
                         Ein wichtiges Abgrenzungskriterium zu vielen anderen
                         Agenturen besteht darin, dass bei uns niemals hohe Raten
                         zu zahlen sind. In den seltensten Fällen werden von uns
-                        Raten von mehr als 200 EUR in Rechnung gestellt. Dies
+                        Raten von mehr als 300 EUR* in Rechnung gestellt. Dies
                         gibt Ihnen die Möglichkeit, jederzeit die Kontrolle über
                         den Ablauf zu haben und verringert Ihre finanzielle
                         Belastung.
@@ -320,10 +330,7 @@ const Home = () => {
                         <i class="fas fa-check-circle"></i>
                       </span>
                       <span class="text-li">
-                        Nicht bei jeder Agentur können Sie mit Ihrem Autor
-                        telefonieren. Unser Modell sieht vor, dass Sie sich vor,
-                        während und auch nach der Bearbeitungszeit direkt mit
-                        Ihrem Autor austauschen können.
+                        Nicht bei jeder Agentur können Sie mit Ihrem Autor telefonieren. Unser Modell sieht vor, dass Sie sich vor, während und auch nach der Bearbeitungszeit direkt mit uns austauschen können.
                       </span>
                     </li>
                     <li>
@@ -331,9 +338,9 @@ const Home = () => {
                         <i class="fas fa-check-circle"></i>
                       </span>
                       <span class="text-li">
-                        Wir sind eine deutsche Agentur, mit einer deutschen
+                        Wir sind eine deutsche Agentur, mit einer festen
                         Anschrift (Eschborn – in der Nähe von Frankfurt) mit
-                        einem deutschen Bankkonto.
+                        einem deutschen Bankkonto. Des Weiteren bieten wir auch PayPal als Zahlungsmethode an.
                       </span>
                     </li>
                   </ul>
@@ -350,9 +357,7 @@ const Home = () => {
                 data-wow-duration="2s"
               >
                 <p>
-                  Überarbeitungen (beispielsweise nach Ihrer Rücksprache mit dem
-                  Dozenten) sind in unseren Preisen enthalten. Jeder Auftrag
-                  wird mit einer Plagiatsprüfung ausgeliefert Wir freuen uns,
+                  Wir freuen uns,
                   wenn Sie uns direkt per Email oder noch besser telefonisch
                   kontaktieren. Ein kurzer gegenseitiger Austausch trägt in
                   aller Regel enorm zur Vertrauensbildung bei. Selbst wenn Sie
@@ -413,7 +418,7 @@ const Home = () => {
                 </ul>
                 <div className="price-btn">
                   <a href="#" className="len-btn btn-primary">
-                    Purchase Now <i className="fal fa-arrow-right"></i>
+                    Anfrage <i className="fal fa-arrow-right"></i>
                   </a>
                 </div>
               </div>
@@ -443,7 +448,7 @@ const Home = () => {
                 </ul>
                 <div className="price-btn">
                   <a href="#" className="len-btn btn-primary">
-                    Purchase Now <i className="fal fa-arrow-right"></i>
+                    Anfrage <i className="fal fa-arrow-right"></i>
                   </a>
                 </div>
               </div>
@@ -473,7 +478,7 @@ const Home = () => {
                 </ul>
                 <div className="price-btn">
                   <a href="#" className="len-btn btn-primary">
-                    Purchase Now <i className="fal fa-arrow-right"></i>
+                    Anfrage <i className="fal fa-arrow-right"></i>
                   </a>
                 </div>
               </div>
@@ -494,6 +499,12 @@ const Home = () => {
             typischen Kosten für Mustervorlagen für Hausarbeiten, Bachelor- und
             Masterarbeiten veranschaulicht.“
           </p>
+          <p
+            className="wow animate__fadeInUp"
+            data-wow-delay=".1s"
+            data-wow-duration="2.1s"
+          >
+            *Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer.</p>
         </div>
       </section>
       <section className="ws-sec" id="LEISTUNGEN">

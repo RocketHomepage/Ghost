@@ -73,17 +73,6 @@ const Datenschutzerklarung = () => {
             Telefon: 0176 5913 6815<br></br>
             E-Mail: bestellung@enigma-writing.de
           </p>
-          <p>Datenschutzbeauftragte/r beim Anbieter ist:</p>
-          Enigma Writing
-          Alexander Wagner
-          Mergenthalerallee 73-75
-          65760 Eschborn<br></br>
-          Telefon: 
-          <br></br>Telefax: [DSB – Faxnummer]<br></br>E-Mail: [DSB – E-Mail]
-          [nachfolgende Angaben sind zu ergänzen, sofern ein Externer
-          Datenschutzbeauftragter bestellt ist] [DSB-Extern – Straße,
-          Hausnummer]
-          <br></br>[DSB-Extern – Postleitzahl, Ort]{" "}
           <h3>II. Rechte der Nutzer und Betroffenen</h3>
           <p>
             Mit Blick auf die nachfolgend noch näher beschriebene

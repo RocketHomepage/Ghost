@@ -476,7 +476,7 @@ a.len-btn i {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid var(--whitegrey_color);
-    padding: 15px 20px 15px 20px;
+    padding: 15px 0;
     width: 100%;
     font-size: 16px;
     letter-spacing: 1.2px;
@@ -2246,6 +2246,30 @@ span.fbdes-text {
     background: var(--primary_color);
     color: var(--white_color);
 }
+.css-1s2u09g-control{
+    background: none !important;
+}
+.css-319lph-ValueContainer{
+    padding: 16px 0 !important;
+}
+.css-qc6sy-singleValue,.css-6j8wv5-Input,.react-select-3-placeholder{
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.css-1okebmr-indicatorSeparator{
+    display: none !important;
+}
+.css-1pahdxg-control{
+    background: none !important;
+    padding: 0 !important;
+    border-top:none !important;
+    border-left:none !important;
+    border-right:none !important;
+    border-bottom: 2px solid var(--white_color) !important;
+    border-radius: 0 !important;
+    box-shadow:  0 0 0 rgba(0,0, 0, 0) !important;
+}
 
 @media (max-width:1200px) {
     .we-left-text {
@@ -3053,3 +3077,5 @@ span.fbdes-text {
 #typeitem .react-select-4-placeholder {
     color: #fff;
 }
+.header a{display: flex;align-items: center;}
+.header.is-sticky{position: fixed;top: 0;left: 0;width: 100%;background: #fff;box-shadow: 0 0 10px rgba(0, 0, 0, .5);}
