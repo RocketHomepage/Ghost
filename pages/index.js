@@ -48,11 +48,11 @@ const Home = () => {
   const [form6, setform6] = useState("");
 
   const options = [
-    { labe: "35", label: "Bitte wählen", value: " Bitte wählen" },
+    { labe: "35", label: "Hausarbeit / Seminararbeit", value: " Hausarbeit / Seminararbeit" },
     {
       labe: "39",
-      label: "Hausarbeit / Seminararbeit",
-      value: "Hausarbeit / Seminararbeit",
+      label: "Bachelorthesis",
+      value: "Bachelorthesis",
     },
     { labe: "45", label: "Masterthesis", value: "Masterthesis" },
   ];
@@ -256,7 +256,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="amazing-sec" id="UBERUNS">
+      <section className="amazing-sec" id="UEBERUNS">
         <div className="container">
           <div className="flex">
             <div className="we-left full">
