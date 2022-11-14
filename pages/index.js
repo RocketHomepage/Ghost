@@ -40,12 +40,12 @@ const Home = () => {
 
   //for second form
 
-  const [form1, setform1] = useState("");
-  const [form2, setform2] = useState("");
-  const [form3, setform3] = useState("");
-  const [form4, setform4] = useState("");
-  const [form5, setform5] = useState("");
-  const [form6, setform6] = useState("");
+  const [form1, setcontvalue1] = useState("");
+  const [form2, setcontvalue2] = useState("");
+  const [form3, setcontvalue3] = useState("");
+  const [form4, setcontvalue4] = useState("");
+  const [form5, setcontvalue5] = useState("");
+  const [form6, setcontvalue6] = useState("");
 
   const options = [
     { labe: "35", label: "Hausarbeit / Seminararbeit", value: " Hausarbeit / Seminararbeit" },
@@ -56,7 +56,7 @@ const Home = () => {
     },
     { labe: "45", label: "Masterthesis", value: "Masterthesis" },
   ];
-
+  const [statusMessage, setStatusMessage] = useState("");
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -67,9 +67,39 @@ const Home = () => {
         "nJxbbTsMnv1EXk2dr"
       )
       .then((res) => {
-        console.log(res);
+        (result) => {
+          console.log(result.text, result.status);
+          clearState();
+          setStatusMessage("Anfrage erfolgreich gesendet");
+        },
+        (error) => {
+          console.log(error.text);
+          setStatusMessage(`${error.text} happened`);
+        }
       })
-      .catch((err) => console.log(err));
+  };
+
+  
+  const sendcontactEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_bcb10q9",
+        "template_6e2irh7",
+        e.target,
+        "nJxbbTsMnv1EXk2dr"
+      )
+      .then((res) => {
+        (result) => {
+          console.log(result.text, result.status);
+          clearState();
+          setStatusMessage("Anfrage erfolgreich gesendet");
+        },
+        (error) => {
+          console.log(error.text);
+          setStatusMessage(`${error.text} happened`);
+        }
+      })
   };
 
   const Userdata = async (event) => {
@@ -83,7 +113,13 @@ const Home = () => {
       anzahlseiten: event.target.anzahlseiten.value,
       insgesamt: event.target.insgesamt.value,
       name: event.target.name.value,
-      email: event.target.email.value,      
+      email: event.target.email.value,
+      contname:event.target.contname.value,
+      contemailc:event.target.contemailc.value,
+      telefon:event.target.telefon.value,
+      nachricht:event.target.nachricht.value,
+      emailcontact:event.target.emailcontact.value,
+      telefoncontact:event.target.telefoncontact.value,
     };
 
     const res = await fetch("/api/mail", {
@@ -173,6 +209,7 @@ const Home = () => {
                       type="string"
                       options={options}
                       name="thema"
+                      required
                       onChange={(e) => {
                         setvalue6(e.labe);
                         setvalue1(e.value);
@@ -190,6 +227,7 @@ const Home = () => {
                       min="0"
                       onChange={(e) => setvalue2(e.target.value)}
                       value2={value2}
+                      required
                     />
                   </div>
                   {/* adding input values */}
@@ -208,6 +246,7 @@ const Home = () => {
                     <input
                       type="string"
                       name="name"
+                      required
                       id="counts"
                       onChange={(e) => setvalue3(e.target.value)}
                     />
@@ -217,31 +256,22 @@ const Home = () => {
                     <input
                       type="string"
                       name="email"
+                      required
                       id="counts"
                       value={value5}
                       onChange={(e) => setvalue5(e.target.value)}
                     />
                   </div>
-
+                  <div className="text-policy">
+                    <input
+                      type="checkbox"
+                      name="email"
+                      required
+                      id="counts"
+                    />
+                  Ich habe die Datenschutzerklärung gelesen und akzeptiert.
+                  </div>
                   <div className="sub-btn">
-                    {/* <button
-                      className="btn-primary"
-                      id="calculate"
-                      type="submit"
-                      onClick={(e) => {
-                        e.preventDefault(),
-                          console.log(
-                            value6,
-                            value1,
-                            value2,
-                            value3,
-                            value4,
-                            value5
-                          );
-                      }}
-                    >
-                      Berechnen
-                    </button> */}
                     <button
                       style={{ marginLeft: "10px" }}
                       className="btn-primary ml-5"
@@ -252,6 +282,7 @@ const Home = () => {
                     </button>
                   </div>
                 </form>
+                <p>{statusMessage}</p>
               </div>
             </div>
           </div>
@@ -274,17 +305,17 @@ const Home = () => {
                   oftmals sehr frustrierend. Daher zeige ich Ihnen nun ein paar
                   Vorteile, die ich Ihnen bieten kann:
                 </p>
-                <div class="pro-ul">
+                <div className="pro-ul">
                   <ul
-                    class="wow animate__fadeInUp"
+                    className="wow animate__fadeInUp"
                     data-wow-delay=".0s"
                     data-wow-duration="2.2s"
                   >
                     <li>
                       <span>
-                        <i class="fas fa-check-circle"></i>
+                        <i className="fas fa-check-circle"></i>
                       </span>
-                      <span class="text-li">
+                      <span className="text-li">
                         Bei uns gibt es keine Massenabfertigung. Wir sind ein
                         kleiner, ausgewählter Autorenkreis, bei dem jeder Autor
                         nach seinem Masterabschluss noch eine Vielzahl weiterer
@@ -293,9 +324,9 @@ const Home = () => {
                     </li>
                     <li>
                       <span>
-                        <i class="fas fa-check-circle"></i>
+                        <i className="fas fa-check-circle"></i>
                       </span>
-                      <span class="text-li">
+                      <span className="text-li">
                         Bei uns gibt es keinen Agenturaufschlag, sodass wir
                         Ihnen das Schreiben Ihrer wissenschaftlichen Arbeit in
                         der Regel für einen Preis von ca. 35-45 EUR pro
@@ -304,9 +335,9 @@ const Home = () => {
                     </li>
                     <li>
                       <span>
-                        <i class="fas fa-check-circle"></i>
+                        <i className="fas fa-check-circle"></i>
                       </span>
-                      <span class="text-li">
+                      <span className="text-li">
                         Überarbeitungen (beispielsweise nach Ihrer Rücksprache mit dem
                         Dozenten) sind in unseren Preisen enthalten. Jeder Auftrag
                         wird mit einer Plagiatsprüfung ausgeliefert
@@ -314,9 +345,9 @@ const Home = () => {
                     </li>
                     <li>
                       <span>
-                        <i class="fas fa-check-circle"></i>
+                        <i className="fas fa-check-circle"></i>
                       </span>
-                      <span class="text-li">
+                      <span className="text-li">
                         Ein wichtiges Abgrenzungskriterium zu vielen anderen
                         Agenturen besteht darin, dass bei uns niemals hohe Raten
                         zu zahlen sind. In den seltensten Fällen werden von uns
@@ -328,17 +359,17 @@ const Home = () => {
                     </li>
                     <li>
                       <span>
-                        <i class="fas fa-check-circle"></i>
+                        <i className="fas fa-check-circle"></i>
                       </span>
-                      <span class="text-li">
+                      <span className="text-li">
                         Nicht bei jeder Agentur können Sie mit Ihrem Autor telefonieren. Unser Modell sieht vor, dass Sie sich vor, während und auch nach der Bearbeitungszeit direkt mit uns austauschen können.
                       </span>
                     </li>
                     <li>
                       <span>
-                        <i class="fas fa-check-circle"></i>
+                        <i className="fas fa-check-circle"></i>
                       </span>
-                      <span class="text-li">
+                      <span className="text-li">
                         Wir sind eine deutsche Agentur, mit einer festen
                         Anschrift (Eschborn – in der Nähe von Frankfurt) mit
                         einem deutschen Bankkonto. Des Weiteren bieten wir auch PayPal als Zahlungsmethode an.
@@ -373,7 +404,7 @@ const Home = () => {
                 <Image
                   src={we_1}
                   alt="we-1"
-                  class="wow animate__fadeInUp"
+                  className="wow animate__fadeInUp"
                   data-wow-delay="0s"
                   data-wow-duration="2s"
                 ></Image>
@@ -533,7 +564,7 @@ const Home = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_2_135)">
+                  <g clipPath="url(#clip0_2_135)">
                     <path
                       d="M40.2344 100C39.7461 99.4141 39.1797 98.8672 38.8086 98.2227C37.4805 95.918 36.2109 93.5742 34.9414 91.2109C34.6289 90.6445 34.3359 90.5273 33.7109 90.7031C30.9961 91.5039 28.2813 92.2461 25.5469 93.0273C24.668 93.2812 23.8672 93.2617 23.2227 92.5391C22.5781 91.8164 22.6563 91.0156 23.0078 90.1758C26.3672 82.1875 29.707 74.1797 33.0469 66.1719C33.1836 65.8398 33.3203 65.5078 33.5156 65.0391C32.2266 64.9023 31.0156 64.7461 29.8047 64.6484C25.293 64.3555 22.3047 61.543 21.8164 57.0703C21.5625 54.7656 21.4648 52.4609 21.0742 50.1953C20.8984 49.1016 20.3906 47.9492 19.7461 47.0312C18.418 45.1953 16.875 43.4961 15.4492 41.7383C12.793 38.4766 12.793 34.4727 15.4492 31.1914C16.7188 29.6289 17.9688 28.0273 19.3164 26.543C20.5664 25.1758 21.1523 23.6133 21.2695 21.7773C21.4063 19.707 21.6406 17.6367 21.8555 15.5664C22.2266 11.7578 25.2344 8.75 29.043 8.37891C31.4062 8.14453 33.7695 7.89062 36.1328 7.67578C37.4219 7.55859 38.5156 7.07031 39.4922 6.25C40.5859 5.33203 41.7188 4.43359 42.793 3.51562C44.5508 2.01172 46.3086 0.527344 48.6328 0C49.4727 0 50.332 0 51.1719 0C53.418 0.488281 55.1562 1.79687 56.8359 3.28125C57.8516 4.17969 58.9844 4.96094 59.9805 5.89844C61.3477 7.16797 62.9492 7.67578 64.7656 7.8125C66.9141 7.96875 69.043 8.18359 71.1719 8.41797C74.9219 8.84766 77.7734 11.9922 78.125 15.957C78.3203 18.1836 78.5352 20.4297 78.75 22.6562C78.8672 23.8867 79.3164 24.9609 80.1367 25.918C81.6211 27.6953 83.0859 29.4727 84.5508 31.2695C87.0898 34.4336 87.1094 38.418 84.6094 41.6016C83.5742 42.9102 82.5977 44.2578 81.4258 45.4297C79.375 47.4609 78.5742 49.9023 78.5156 52.7344C78.4766 54.3945 78.2812 56.0547 78.0273 57.6758C77.4023 61.6602 74.5117 64.2773 70.5078 64.6289C69.1797 64.7461 67.8516 64.8828 66.4258 65.0195C66.6016 65.4883 66.7383 65.8789 66.8945 66.25C70.2148 74.1992 73.5352 82.1289 76.8555 90.0781C77.0312 90.5078 77.1875 91.0156 77.168 91.4844C77.1094 92.7539 75.8984 93.457 74.5117 93.0859C71.7969 92.3438 69.0625 91.6016 66.3672 90.7617C65.5859 90.5273 65.2734 90.7227 64.9414 91.3867C63.6914 93.7305 62.4219 96.0742 61.0938 98.3789C60.7422 99.0039 60.1367 99.4727 59.6484 100C59.2578 100 58.8672 100 58.4766 100C57.9883 99.375 57.3633 98.8281 57.0508 98.1445C56.1914 96.3281 55.4688 94.4336 54.6875 92.5781C53.7305 90.2734 52.7539 87.9688 51.7969 85.6445C51.3086 84.4727 51.8359 83.457 52.9102 83.3789C53.8086 83.3203 54.2578 83.8672 54.5703 84.6094C55.8789 87.7539 57.1875 90.8984 58.5156 94.043C58.7109 94.5312 58.9453 95 59.2188 95.6641C60.3906 93.5547 61.4453 91.6211 62.5195 89.707C63.6328 87.6758 64.7266 87.2266 66.9336 87.8516C69.082 88.457 71.2305 89.043 73.5156 89.6875C73.3203 89.1992 73.2031 88.8477 73.0469 88.4961C70.0586 81.3672 67.0898 74.2383 64.1016 67.1094C63.2617 65.1172 62.8125 65 60.9961 66.3477C60.6641 66.6016 60.332 66.875 60.0195 67.1484C58.3008 68.5547 56.582 69.9219 54.9023 71.3672C54.3945 71.8164 53.8867 72.3828 53.6328 72.9883C50.0781 81.3867 46.582 89.8242 43.0078 98.2227C42.7148 98.9062 42.0117 99.4141 41.5039 100.02C41.0156 100 40.625 100 40.2344 100ZM49.8633 69.9609C51.1523 69.9805 52.2461 69.5898 53.1836 68.8281C55 67.3438 56.8164 65.8594 58.6133 64.3555C60.1172 63.1055 61.8164 62.4414 63.7695 62.2852C65.9766 62.1289 68.1836 61.9141 70.3711 61.6602C73.1445 61.3477 74.8438 59.6094 75.1562 56.8359C75.332 55.2148 75.5469 53.5938 75.5859 51.9727C75.6836 48.8867 76.582 46.1914 78.7891 43.9453C79.9805 42.7148 81.0156 41.3086 82.0898 39.9609C83.9648 37.6562 83.9453 35.2344 82.0898 32.9492C80.625 31.1719 79.1602 29.375 77.6758 27.5977C76.5234 26.1914 75.9375 24.5898 75.7812 22.7734C75.5664 20.3711 75.3906 17.9688 75.0586 15.5859C74.7266 13.1445 72.8906 11.5234 70.4492 11.2891C68.3203 11.0938 66.1719 10.8398 64.043 10.6836C61.7969 10.5469 59.8828 9.76562 58.2031 8.28125C56.6406 6.91406 55 5.60547 53.3984 4.29688C51.1914 2.5 48.75 2.5 46.543 4.27734C44.7852 5.72266 43.0273 7.16797 41.2695 8.61328C39.9414 9.72656 38.4375 10.4297 36.6797 10.5859C34.2773 10.8203 31.8945 11.0742 29.4922 11.2891C26.9141 11.543 25.0195 13.3789 24.7852 15.9375C24.5898 18.0664 24.3359 20.2148 24.1797 22.3438C24.0234 24.5703 23.2422 26.4844 21.7578 28.1641C20.3711 29.7266 19.082 31.3672 17.7734 32.9688C15.9375 35.2148 15.957 37.6758 17.7734 39.9023C19.2578 41.7188 20.7617 43.5156 22.2461 45.332C23.2617 46.5625 23.8867 47.9688 24.043 49.5898C24.2773 52.0117 24.5313 54.4336 24.7656 56.875C25 59.375 26.6211 61.1914 29.1016 61.543C30.8594 61.7969 32.6562 62.0117 34.4336 62.0703C37.5195 62.1875 40.1953 63.0859 42.4609 65.2734C43.7109 66.4844 45.1563 67.5195 46.5039 68.6523C47.5391 69.4922 48.6328 70 49.8633 69.9609ZM26.5039 89.6875C28.6914 89.0625 30.7422 88.4766 32.793 87.9102C35.332 87.1875 36.3086 87.5977 37.5781 89.9023C38.6133 91.7773 39.6484 93.6523 40.7813 95.7031C43.9844 88.0664 47.1094 80.5859 50.3125 72.9297C47.3633 73.0469 45.3125 71.6211 43.3594 69.9219C42.0703 68.7891 40.7227 67.6953 39.375 66.6406C38.8477 66.2305 38.2227 65.918 37.6367 65.6055C36.9531 65.2344 36.582 65.4492 36.2695 66.2109C33.1445 73.7305 30 81.25 26.8555 88.7695C26.7383 89.0039 26.6602 89.2773 26.5039 89.6875Z"
                       fill="#3BACB6"
@@ -617,7 +648,7 @@ const Home = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_1_109)">
+                  <g clipPath="url(#clip0_1_109)">
                     <path
                       d="M0 44.3229C3.30729 40.1563 6.61458 35.9636 9.94792 31.7969C11.901 29.349 13.8542 26.9271 15.7812 24.4792C16.3802 23.724 17.0833 23.4115 18.0469 23.4115C39.349 23.4375 60.651 23.4375 81.9531 23.4115C82.9688 23.4115 83.6719 23.8021 84.2708 24.5573C89.2708 30.8333 94.2969 37.1094 99.3229 43.3854C99.5573 43.6979 99.7656 44.0104 100 44.3229C100 44.7136 100 45.1042 100 45.4948C99.6875 45.9115 99.401 46.3281 99.0365 46.7188C83.3854 64.0365 67.7344 81.3542 52.0833 98.6458C51.6406 99.1406 51.0938 99.5573 50.599 100C50.2083 100 49.8177 100 49.4271 100C48.9583 99.5833 48.4635 99.2188 48.0729 98.776C34.2188 83.5156 20.3906 68.2292 6.58854 52.9427C4.375 50.4948 2.1875 47.9948 0 45.4948C0 45.1042 0 44.7396 0 44.3229ZM29.5833 46.9011C36.4062 62.3698 43.151 77.6823 50 93.2031C56.875 77.6302 63.6198 62.3177 70.4167 46.9011C56.7448 46.9011 43.2552 46.9011 29.5833 46.9011ZM69.8698 42.9167C69.8177 42.7604 69.7917 42.6563 69.7396 42.5781C66.7969 37.6563 63.8802 32.7604 60.8854 27.8646C60.7031 27.5781 60.1562 27.3698 59.7917 27.3698C53.2812 27.3438 46.7708 27.3698 40.2604 27.3177C39.5833 27.3177 39.2188 27.5521 38.8802 28.125C36.1198 32.7604 33.3333 37.3958 30.5729 42.0313C30.4167 42.2917 30.2604 42.5781 30.0521 42.9427C43.3854 42.9167 56.5885 42.9167 69.8698 42.9167ZM6.35417 46.875C18.6719 60.4948 30.8073 73.9063 42.9427 87.3177C42.9948 87.0573 42.9427 86.875 42.8646 86.6927C37.1094 73.6458 31.3542 60.599 25.625 47.5521C25.3646 46.9531 25.026 46.849 24.4531 46.849C18.75 46.875 13.0729 46.849 7.36979 46.849C7.10937 46.875 6.84896 46.875 6.35417 46.875ZM93.6458 46.875C93.0729 46.875 92.7344 46.875 92.4219 46.875C86.901 46.875 81.3542 46.901 75.8333 46.849C75 46.849 74.5833 47.0573 74.2448 47.8386C69.5573 58.5156 64.8438 69.1927 60.1562 79.8698C59.0625 82.3177 57.9948 84.7917 56.901 87.2396C56.9531 87.2656 57.0052 87.2917 57.0573 87.3438C69.1927 73.9063 81.3281 60.4948 93.6458 46.875ZM34.8177 27.3438C29.401 27.3438 24.2188 27.3438 19.0104 27.3698C18.6719 27.3698 18.2552 27.6823 18.0208 27.9948C15.2604 31.4063 12.526 34.8438 9.76562 38.2813C8.56771 39.7917 7.34375 41.3021 6.04167 42.9427C6.32812 42.9688 6.43229 42.9948 6.5625 42.9948C12.6562 42.9948 18.724 43.0208 24.8177 42.9688C25.1562 42.9688 25.625 42.6302 25.8333 42.3177C27.6302 39.4011 29.375 36.4844 31.1198 33.5417C32.3177 31.5104 33.5417 29.5052 34.8177 27.3438ZM93.9844 42.9688C89.8177 37.7604 85.8333 32.7604 81.7969 27.7865C81.5885 27.5261 81.0937 27.3698 80.7031 27.3698C75.8333 27.3438 70.9375 27.3438 66.0677 27.3438C65.8333 27.3438 65.5729 27.3438 65.2083 27.3438C65.3125 27.5781 65.3646 27.7083 65.4427 27.8125C68.3594 32.6823 71.276 37.5781 74.2448 42.4219C74.4271 42.7344 75.026 42.9427 75.4167 42.9427C81.1719 42.9688 86.9271 42.9688 92.6823 42.9688C93.0469 42.9688 93.4115 42.9688 93.9844 42.9688Z"
                       fill="#3BACB6"
@@ -666,93 +697,101 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <div
-        className="get-box wow animate__fadeInUp"
-        data-wow-delay="0s"
-        data-wow-duration="2s"
-      >
-        <h3>Contect from</h3>
-        <form onSubmit={sendEmail}>
-          <div className="input-box">
-            <label> Full Name </label>
-            <input
-              type="string"
-              name="AnzahlSeiten"
-              id="counts"
-              onChange={(e) => setform1(e.target.value)}
-            />
+      <section className="contactform" id="KONTAKT">
+        <div className="container">
+          <div className="flex">
+            <div className="pricing-right">
+            <h2><span>KONTAKT</span></h2>
+                <form onSubmit={sendcontactEmail}>
+                  <div className="input-box">
+                    <label>Name</label>
+                    <input
+                      type="string"
+                      name="contname"
+                      placeholder="Name"
+                      onChange={(e) => setcontvalue1(e.target.value)}
+                      value={form1}
+                      required
+                    />
+                  </div>
+                  <div className="input-box">
+                    <label>E-Mail</label>
+                    <input
+                      type="string"
+                      name="contemailc"
+                      placeholder="E-Mail"
+                      min="0"
+                      onChange={(e) => setcontvalue2(e.target.value)}
+                      value={form2}
+                      required
+                    />
+                  </div>
+                  {/* adding input values */}
+                  <div className="input-box">
+                    <label>Telefon</label>
+                    <input
+                      type="string"
+                      name="telefon"
+                      value={form3}
+                      onChange={(e) => setcontvalue3(e.target.value)}
+                    />
+                  </div>
+                  <div className="input-box">
+                    <label>Nachricht</label>
+                    <input
+                      type="string"
+                      name="nachricht"
+                      required
+                      value={form4}
+                      onChange={(e) => setcontvalue4(e.target.value)}
+                    />
+                  </div>
+                  <div className="data-policy">
+                    <p>Bitte wählen Sie aus, über welchen Weg wir Sie kontaktieren dürfen:</p>
+                    <div><input
+                      type="checkbox"
+                      name="emailcontact"
+                      onChange={(e) => setcontvalue5(e.target.value)}
+                      value={form5}
+                      required
+                      id="Email"
+                    />
+                    <label for="Email">Email</label>
+                    </div>
+                    <div><input
+                      type="checkbox"
+                      name="telefoncontact"
+                      onChange={(e) => setcontvalue6(e.target.value)}
+                      value={form6}
+                      id="Telefon"
+                    />
+                    <label for="Telefon">Telefon</label>
+                    </div>
+                    <p>Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@rocket-homepage.de widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer Datenschutzerklärung.</p>
+                    <p><input
+                      type="checkbox"
+                      name="validation"
+                      onChange={(e) => setcontvalue6(e.target.value)}
+                      value={form6}
+                      required
+                      id="Datenschutz"
+                    /><label for="Datenschutz">Datenschutz bestätigen</label>
+                    </p>
+                  </div>
+                  <div className="sub-btn">
+                    <button
+                      style={{ marginLeft: "10px" }}
+                      className="btn-primary ml-5"
+                      type="submit"
+                    >
+                      Senden
+                    </button>
+                  </div>
+                </form>
+            </div>
           </div>
-          <div className="input-box">
-            <label>Username</label>
-            <input
-              type="string"
-              name="totals"
-              id="counts"
-              onChange={(e) => setform2(e.target.value)}
-            />
-          </div>
-          <div className="input-box">
-            <label>Age </label>
-            <input
-              type="string"
-              name="name"
-              id="counts"
-              onChange={(e) => setform3(e.target.value)}
-            />
-          </div>
-          <div className="input-box">
-            <label>Email</label>
-            <input
-              type="string"
-              name="Email"
-              id="counts"
-              onChange={(e) => setform4(e.target.value)}
-            />
-          </div>
-          <div>
-            {" "}
-            <input
-              style={{ marginLeft: "10px" }}
-              type="checkbox"
-              onChange={(e) => setform5(e.target.value)}
-            />
-            <label>Femle</label>
-          </div>
-
-          <input
-            style={{ marginLeft: "10px" }}
-            type="checkbox"
-            value={value5}
-            onChange={(e) => setform6(e.target.value)}
-          />
-          <label>male</label>
-
-          <div className="sub-btn">
-            <button
-              className="btn-primary"
-              id="calculate"
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault(),
-                  console.log(
-                    "name:",
-                    form1,
-                    "username",
-                    form2,
-                    "age",
-                    form3,
-                    "Email",
-                    form4,
-                    form5,
-                    f
-                  );
-              }}
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </div> */}
+        </div>
+      </section>
     </>
   );
 };

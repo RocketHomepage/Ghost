@@ -72,10 +72,10 @@ const Footer = () => {
                 <h4>Useful Links</h4>
                 <ul>
                   <li>
-                    <a href="/datenschutzerklarung">DATENSCHUTZERKLÄRUNG</a>
+                    <Link href="/datenschutzerklarung">DATENSCHUTZERKLÄRUNG</Link>
                   </li>
                   <li>
-                    <a href="/impressum">IMPRESSUM</a>
+                    <Link href="/impressum">IMPRESSUM</Link>
                   </li>
                 </ul>
               </div>
