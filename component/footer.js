@@ -42,27 +42,27 @@ const Footer = () => {
                 <h4>Quick Links</h4>
                 <ul>
                   <li>
-                    <Link href="#HOME">
+                    <Link href="/#HOME">
                       <a>HOME</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#UBERUNS">
+                    <Link href="/#UEBERUNS">
                       <a>ÜBER UNS</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#PREISE">
+                    <Link href="/#PREISE">
                       <a>PREISE</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#LEISTUNGEN">
+                    <Link href="/#LEISTUNGEN">
                       <a>LEISTUNGEN</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#KONTAKT">
+                    <Link href="/#KONTAKT">
                       <a>KONTAKT</a>
                     </Link>
                   </li>
@@ -75,7 +75,7 @@ const Footer = () => {
                     <a href="/datenschutzerklarung">DATENSCHUTZERKLÄRUNG</a>
                   </li>
                   <li>
-                    <a href="/imprint">IMPRESSUM</a>
+                    <a href="/impressum">IMPRESSUM</a>
                   </li>
                 </ul>
               </div>
@@ -109,7 +109,7 @@ const Footer = () => {
                     <span className="fb-icon">
                       <i className="fas fa-clock"></i>
                     </span>
-                    <span className="fbdes-text">07.00 AM - 19.00 PM</span>
+                    <span className="fbdes-text">08:00 Uhr - 20:00 Uhr</span>
                   </li>
                 </ul>
               </div>

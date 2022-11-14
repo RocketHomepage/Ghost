@@ -112,9 +112,7 @@ const Home = () => {
                   data-wow-delay=".2s"
                   data-wow-duration="2s"
                 >
-                  Stellen Sie uns auf die Probe und nutzen Sie unsere
-                  kostenlosen und unverbindlichen Beratungsmöglichkeiten per
-                  Telefon oder E-Mail{" "}
+                  Stellen Sie uns auf die Probe und nutzen Sie unsere kostenlosen und unverbindlichen Beratungsmöglichkeiten per Telefon <Link href="tel:0176 - 5913 6815">(0176 - 5913 6815)</Link> oder E-Mail <Link href="mailto:info@enigma-writing.de">(info@enigma-writing.de)</Link>
                 </p>
                 <div className="btn-we">
                   <a

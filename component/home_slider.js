@@ -78,7 +78,7 @@ const slider_home = () => {
                   </div>
                 </div>
                 <div className="jon-text">
-                Danke für die schnelle und unkomplizierte Hilfe
+                Danke für die schnelle und unkomplizierte Hilfe. Hätte ich euch vorher kennengelernt, wäre mir viel Stress erspart geblieben
                 </div>
               </div>
             </div>
