@@ -39,12 +39,6 @@ const header = () => {
         <div className="head-box menu-box" id="topnav">
           <div className="menu-box-sub">
             <div className="mobile-logo">
-              <Link href="/">
-                <a>
-                  <Image src={Logo} alt="logo" />
-                </a>
-              </Link>               
-              
               <div className="close-btn">
                 <span
                   href="javascript:void(0)"

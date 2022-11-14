@@ -2325,18 +2325,24 @@ span.fbdes-text {
     .mobile-menu {
         display: block;
     }
-
-    .mobile-menu {
-        width: 33.33%;
+    .header .head-box.rmenu-box{
+        display: none;
     }
+    .header a{
+        flex:1;
+    }
+    /* .mobile-menu {
+        width: 33.33%;
+    } */
 
     .mobile-menu-icon {
-        padding: 24px 30px;
+        padding: 16px;
         background-color: var(--primary_color);
         color: var(--section_color);
         font-size: 30px;
         display: inline-block;
-        border-radius: 0 0 20px 20px;
+        border-radius: 0 0 8px 8px;
+        cursor: pointer;
     }
 
     .menu-box {
@@ -2359,6 +2365,7 @@ span.fbdes-text {
         transform: translateX(0px);
         visibility: visible;
         opacity: 1;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
     #topnav .closebtn {
@@ -2371,12 +2378,15 @@ span.fbdes-text {
         border-radius: 0;
         max-width: 100%;
         background-color: var(--section_color);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
     }
 
     .mobile-logo {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-between;        
     }
 
     .mobile-logo img {
@@ -2391,15 +2401,16 @@ span.fbdes-text {
     .mobile-logo .close-btn {
         padding: 5px;
         border-radius: 3px;
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 40px;
+        line-height: 40px;
         font-weight: 600;
-        width: 77%;
+        width: 50px;
         color: var(--primary_color);
         background-color: var(--secondary_color);
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
     }
 
     .mobile-logo .close-btn:hover {
@@ -2448,6 +2459,9 @@ span.fbdes-text {
 
     .menu-box-sub ul {
         width: 100%;
+        flex-direction: column;
+        row-gap: 32px;
+        padding: 30px;
     }
 
     .droup-main {
@@ -2669,6 +2683,7 @@ span.fbdes-text {
 
     .header {
         justify-content: space-between;
+        column-gap: 32px;
     }
 
     .menu-box.opennav {
