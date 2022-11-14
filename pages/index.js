@@ -78,9 +78,12 @@ const Home = () => {
     setSubmitted(true);
 
     let userdata = {
-      Name: event.target.Name.value,
-      Email: event.target.Email.value,
-      Message: event.target.Message.value,
+      
+      thema: event.target.thema.value,
+      anzahlseiten: event.target.anzahlseiten.value,
+      insgesamt: event.target.insgesamt.value,
+      name: event.target.name.value,
+      email: event.target.email.value,      
     };
 
     const res = await fetch("/api/mail", {
@@ -169,7 +172,7 @@ const Home = () => {
                       id="typeitem"
                       type="string"
                       options={options}
-                      name="Thema"
+                      name="thema"
                       onChange={(e) => {
                         setvalue6(e.labe);
                         setvalue1(e.value);
@@ -181,7 +184,7 @@ const Home = () => {
                     <label>Anzahl Seiten</label>
                     <input
                       type="number"
-                      name="Anzahl Seiten"
+                      name="anzahlseiten"
                       id="counts"
                       placeholder="Seitenzahl insgesamt"
                       min="0"
@@ -194,7 +197,7 @@ const Home = () => {
                     <label>Insgesamt</label>
                     <input
                       type="text"
-                      name="Insgesamt"
+                      name="insgesamt"
                       id="counts"
                       value={value6 * value2 + " Є"}
                       onChange={(e) => console.log(setvalue4(value6 * value2))}
@@ -204,7 +207,7 @@ const Home = () => {
                     <label>Name</label>
                     <input
                       type="string"
-                      name="Name"
+                      name="name"
                       id="counts"
                       onChange={(e) => setvalue3(e.target.value)}
                     />
@@ -213,7 +216,7 @@ const Home = () => {
                     <label>E-Mail</label>
                     <input
                       type="string"
-                      name="E-Mail"
+                      name="email"
                       id="counts"
                       value={value5}
                       onChange={(e) => setvalue5(e.target.value)}
