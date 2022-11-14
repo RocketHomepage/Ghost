@@ -169,7 +169,7 @@ const Home = () => {
                       id="typeitem"
                       type="string"
                       options={options}
-                      name="Category"
+                      name="Thema"
                       onChange={(e) => {
                         setvalue6(e.labe);
                         setvalue1(e.value);
@@ -181,7 +181,7 @@ const Home = () => {
                     <label>Anzahl Seiten</label>
                     <input
                       type="number"
-                      name="AnzahlSeiten"
+                      name="Anzahl Seiten"
                       id="counts"
                       placeholder="Seitenzahl insgesamt"
                       min="0"
@@ -194,7 +194,7 @@ const Home = () => {
                     <label>Insgesamt</label>
                     <input
                       type="text"
-                      name="totals"
+                      name="Insgesamt"
                       id="counts"
                       value={value6 * value2 + " Є"}
                       onChange={(e) => console.log(setvalue4(value6 * value2))}
