@@ -9,6 +9,7 @@ import Right_1 from "../Images/right-1.jpg";
 import pp_img from "../Images/pp-img.jpg";
 import we_1 from "../Images/we-1.jpg";
 import { useEffect } from "react";
+import Head from 'next/head'
 
 const isServer = typeof window === "undefined";
 const WOW = !isServer ? require("wow.js") : null;
@@ -133,6 +134,11 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Enigma Writing | Passion in Wort & Schrift</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Enigma Writing | Ghostwriting | Hausarbeit/Seminararbeit | Bachelor Thesis | Master Thesis | Ab €450 | ☎️ +49 (0)176 5913 6815"/>
+      </Head>
       <section className="writern-sec-1" id="HOME">
         <div className="overlay"></div>
         <div className="wp-pro-sec">
