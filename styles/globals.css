@@ -346,6 +346,7 @@ a.len-btn i {
     max-width: 1190px;
     margin: 0 auto;
     padding: 0px 20px;
+    max-width: 100%;
 }
 
 .pl-text {
@@ -2220,15 +2221,18 @@ span.fbdes-text {
     display: flex;
     margin-top: 100px;
 }
-.contactform h2{
+
+.contactform h2 {
     color: #fff;
     margin-bottom: 32px;
 }
+
 .contactform form {
     width: 500px;
     display: flex;
     flex-direction: column;
     color: var(--white_color);
+    max-width: 100%;
 }
 
 .contactform form input,
@@ -2249,40 +2253,51 @@ span.fbdes-text {
     background: var(--primary_color);
     color: var(--white_color);
 }
-.css-1s2u09g-control{
+
+.css-1s2u09g-control {
     background: none !important;
 }
-.css-1d8n9bt, .css-319lph-ValueContainer{
+
+.css-1d8n9bt,
+.css-319lph-ValueContainer {
     padding: 16px 0 !important;
 }
-.css-qc6sy-singleValue,.css-6j8wv5-Input,.react-select-3-placeholder{
+
+.css-qc6sy-singleValue,
+.css-6j8wv5-Input,
+.react-select-3-placeholder {
     color: #fff !important;
     margin: 0 !important;
     padding: 0 !important;
 }
-.css-1okebmr-indicatorSeparator{
+
+.css-1okebmr-indicatorSeparator {
     display: none !important;
 }
-.css-1pahdxg-control{
+
+.css-1pahdxg-control {
     background: none !important;
     padding: 0 !important;
-    border-top:none !important;
-    border-left:none !important;
-    border-right:none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
     border-bottom: 2px solid var(--white_color) !important;
     border-radius: 0 !important;
-    box-shadow:  0 0 0 rgba(0,0, 0, 0) !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
 }
-.text-policy{
+
+.text-policy {
     color: var(--white_color);
     display: flex;
     flex-direction: row;
     column-gap: 8px;
     align-items: flex-start;
 }
-.contactform{
+
+.contactform {
     background: var(--btnhover_color);
 }
+
 @media (max-width:1200px) {
     .we-left-text {
         padding-left: 50px;
@@ -2337,12 +2352,15 @@ span.fbdes-text {
     .mobile-menu {
         display: block;
     }
-    .header .head-box.rmenu-box{
+
+    .header .head-box.rmenu-box {
         display: none;
     }
-    .header a{
-        flex:1;
+
+    .header a {
+        flex: 1;
     }
+
     /* .mobile-menu {
         width: 33.33%;
     } */
@@ -2377,7 +2395,7 @@ span.fbdes-text {
         transform: translateX(0px);
         visibility: visible;
         opacity: 1;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     #topnav .closebtn {
@@ -2398,7 +2416,7 @@ span.fbdes-text {
     .mobile-logo {
         display: flex;
         align-items: center;
-        justify-content: space-between;        
+        justify-content: space-between;
     }
 
     .mobile-logo img {
@@ -2677,6 +2695,10 @@ span.fbdes-text {
 }
 
 @media (max-width:767px) {
+    .contactform {
+        padding: 50px 16px;
+    }
+
     .our-price-inner {
         width: 100%;
     }
@@ -3092,17 +3114,31 @@ span.fbdes-text {
         margin-top: 0;
     }
 }
-#typeitem > div.css-1s2u09g-control {
+
+#typeitem>div.css-1s2u09g-control {
     /* background: none; */
     border-bottom: solid var(--whitegrey_color);
-    border-left:none;
+    border-left: none;
     border-right: none;
     border-top: none;
     border-radius: 0;
-    
+
 }
+
 #typeitem .react-select-4-placeholder {
     color: #fff;
 }
-.header a{display: flex;align-items: center;}
-.header.is-sticky{position: fixed;top: 0;left: 0;width: 100%;background: #fff;box-shadow: 0 0 10px rgba(0, 0, 0, .5);}
+
+.header a {
+    display: flex;
+    align-items: center;
+}
+
+.header.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
