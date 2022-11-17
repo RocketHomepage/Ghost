@@ -346,7 +346,7 @@ a.len-btn i {
     max-width: 1190px;
     margin: 0 auto;
     padding: 0px 20px;
-    max-width: 100%;
+    width: 100%;
 }
 
 .pl-text {
