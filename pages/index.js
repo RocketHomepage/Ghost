@@ -58,6 +58,7 @@ const Home = () => {
     { labe: "45", label: "Masterthesis", value: "Masterthesis" },
   ];
   const [statusMessage, setStatusMessage] = useState("");
+  const [contactMessage, setcontactMessage] = useState("");
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -67,17 +68,17 @@ const Home = () => {
         e.target,
         "nJxbbTsMnv1EXk2dr"
       )
-      .then((res) => {
-        (result) => {
-          console.log(result.text, result.status);
-          clearState();
+      .then(
+        function(response) {
+          // console.log(result.text, result.status);
+          // clearState();
           setStatusMessage("Anfrage erfolgreich gesendet");
         },
-        (error) => {
-          console.log(error.text);
+        function(error) {
+          // console.log(error.text);
           setStatusMessage(`${error.text} happened`);
         }
-      })
+      )
   };
 
   
@@ -90,17 +91,17 @@ const Home = () => {
         e.target,
         "nJxbbTsMnv1EXk2dr"
       )
-      .then((res) => {
-        (result) => {
-          console.log(result.text, result.status);
-          clearState();
-          setStatusMessage("Anfrage erfolgreich gesendet");
+      .then(
+        function(response) {
+          // console.log(result.text, result.status);
+          // clearState();
+          setcontactMessage("Anfrage erfolgreich gesendet");
         },
-        (error) => {
-          console.log(error.text);
-          setStatusMessage(`${error.text} happened`);
+        function(error) {
+          // console.log(error.text);
+          setcontactMessage(`${error.text} happened`);
         }
-      })
+      )
   };
 
   const Userdata = async (event) => {
@@ -288,7 +289,7 @@ const Home = () => {
                     </button>
                   </div>
                 </form>
-                <p>{statusMessage}</p>
+                <p className="messagearea">{statusMessage}</p>
               </div>
             </div>
           </div>
@@ -794,6 +795,7 @@ const Home = () => {
                     </button>
                   </div>
                 </form>
+                <p className="messagearea">{contactMessage}</p>
             </div>
           </div>
         </div>
