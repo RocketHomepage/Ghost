@@ -10,6 +10,7 @@ import pp_img from "../Images/pp-img.jpg";
 import we_1 from "../Images/we-1.jpg";
 import { useEffect } from "react";
 import Head from 'next/head'
+import ScrollToTop from './ScrollToTop';
 
 const isServer = typeof window === "undefined";
 const WOW = !isServer ? require("wow.js") : null;
@@ -800,6 +801,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <ScrollToTop></ScrollToTop>
     </>
   );
 };
