@@ -11,9 +11,11 @@ import we_1 from "../Images/we-1.jpg";
 import { useEffect } from "react";
 import Head from 'next/head'
 import ScrollToTop from './ScrollToTop';
+import Collapsible from 'react-collapsible';
 
 const isServer = typeof window === "undefined";
 const WOW = !isServer ? require("wow.js") : null;
+    
 
 const Home = () => {
   useEffect(() => {
@@ -39,6 +41,7 @@ const Home = () => {
   const [value4, setvalue4] = useState("");
   const [value5, setvalue5] = useState("");
   const [value6, setvalue6] = useState("");
+  const [value8, setvalue8] = useState("");
 
   //for second form
 
@@ -183,240 +186,6 @@ const Home = () => {
             </div>
             <div className="we-right-text">
               <Image src={Right_1} alt="logo"></Image>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="pricing-sec">
-        <div className="container">
-          <div className="flex">
-            <div className="pricing-left">
-              <div className="pl-text">
-                <div className="img-pl">
-                  <Image src={pp_img} alt="pp-img"></Image>
-                </div>
-                <div className="slider-pl">
-                  <div className="testimonial-box wow animate__fadeInUp">
-                    <Slider_home />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="pricing-right">
-              <div
-                className="get-box wow animate__fadeInUp"
-                data-wow-delay="0s"
-                data-wow-duration="2s"
-              >
-                <h3>Preisrechner</h3>
-                <form onSubmit={sendEmail}>
-                  <div className="input-box">
-                    <label>Thema</label>
-                    <Select
-                      id="typeitem"
-                      type="string"
-                      options={options}
-                      name="thema"
-                      required
-                      onChange={(e) => {
-                        setvalue6(e.labe);
-                        setvalue1(e.value);
-                      }}
-                      placeholder="Bitte wählen"
-                    />
-                  </div>
-                  <div className="input-box">
-                    <label>Anzahl Seiten</label>
-                    <input
-                      type="number"
-                      name="anzahlseiten"
-                      id="counts"
-                      placeholder="Seitenzahl insgesamt"
-                      min="0"
-                      onChange={(e) => setvalue2(e.target.value)}
-                      value2={value2}
-                      required
-                    />
-                  </div>
-                  {/* adding input values */}
-                  <div className="input-box">
-                    <label>Insgesamt</label>
-                    <input
-                      type="text"
-                      name="insgesamt"
-                      id="counts"
-                      value={value6 * value2 + " Є"}
-                      onChange={(e) => console.log(setvalue4(value6 * value2))}
-                    />
-                  </div>
-                  <div className="input-box">
-                    <label>Name</label>
-                    <input
-                      type="string"
-                      name="name"
-                      required
-                      id="counts"
-                      onChange={(e) => setvalue3(e.target.value)}
-                    />
-                  </div>
-                  <div className="input-box">
-                    <label>E-Mail</label>
-                    <input
-                      type="string"
-                      name="email"
-                      required
-                      id="counts"
-                      value={value5}
-                      onChange={(e) => setvalue5(e.target.value)}
-                    />
-                  </div>
-                  <div className="text-policy">
-                    <input
-                      type="checkbox"
-                      name="email"
-                      required
-                      id="counts"
-                    />
-                  Ich habe die Datenschutzerklärung gelesen und akzeptiert.
-                  </div>
-                  <div className="sub-btn">
-                    <button
-                      style={{ marginLeft: "10px" }}
-                      className="btn-primary ml-5"
-                      id="calculate"
-                      type="submit"
-                    >
-                      Senden
-                    </button>
-                  </div>
-                </form>
-                <p className="messagearea">{statusMessage}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="amazing-sec" id="UEBERUNS">
-        <div className="container">
-          <div className="flex">
-            <div className="we-left full">
-              <div
-                className="heading-sec wow animate__fadeInUp"
-                data-wow-duration="2s"
-              >
-                <h2>
-                  <span>ÜBER UNS</span>
-                </h2>
-                <p>
-                  Bei der Vielzahl der Webseiten zum Thema Ghostwriting
-                  empfinden viele Kunden die Suche nach der richtigen Agentur
-                  oftmals sehr frustrierend. Daher zeige ich Ihnen nun ein paar
-                  Vorteile, die ich Ihnen bieten kann:
-                </p>
-                <div className="pro-ul">
-                  <ul
-                    className="wow animate__fadeInUp"
-                    data-wow-delay=".0s"
-                    data-wow-duration="2.2s"
-                  >
-                    <li>
-                      <span>
-                        <i className="fas fa-check-circle"></i>
-                      </span>
-                      <span className="text-li">
-                        Bei uns gibt es keine Massenabfertigung. Wir sind ein
-                        kleiner, ausgewählter Autorenkreis, bei dem jeder Autor
-                        nach seinem Masterabschluss noch eine Vielzahl weiterer
-                        Bachelorarbeiten und Masterarbeiten geschrieben hat.
-                      </span>
-                    </li>
-                    <li>
-                      <span>
-                        <i className="fas fa-check-circle"></i>
-                      </span>
-                      <span className="text-li">
-                        Bei uns gibt es keinen Agenturaufschlag, sodass wir
-                        Ihnen das Schreiben Ihrer wissenschaftlichen Arbeit in
-                        der Regel für einen Preis von ca. 35-45 EUR pro
-                        Textseite anbieten können.
-                      </span>
-                    </li>
-                    <li>
-                      <span>
-                        <i className="fas fa-check-circle"></i>
-                      </span>
-                      <span className="text-li">
-                        Überarbeitungen (beispielsweise nach Ihrer Rücksprache mit dem
-                        Dozenten) sind in unseren Preisen enthalten. Jeder Auftrag
-                        wird mit einer Plagiatsprüfung ausgeliefert
-                      </span>
-                    </li>
-                    <li>
-                      <span>
-                        <i className="fas fa-check-circle"></i>
-                      </span>
-                      <span className="text-li">
-                        Ein wichtiges Abgrenzungskriterium zu vielen anderen
-                        Agenturen besteht darin, dass bei uns niemals hohe Raten
-                        zu zahlen sind. In den seltensten Fällen werden von uns
-                        Raten von mehr als 300 EUR* in Rechnung gestellt. Dies
-                        gibt Ihnen die Möglichkeit, jederzeit die Kontrolle über
-                        den Ablauf zu haben und verringert Ihre finanzielle
-                        Belastung.
-                      </span>
-                    </li>
-                    <li>
-                      <span>
-                        <i className="fas fa-check-circle"></i>
-                      </span>
-                      <span className="text-li">
-                        Nicht bei jeder Agentur können Sie mit Ihrem Autor telefonieren. Unser Modell sieht vor, dass Sie sich vor, während und auch nach der Bearbeitungszeit direkt mit uns austauschen können.
-                      </span>
-                    </li>
-                    <li>
-                      <span>
-                        <i className="fas fa-check-circle"></i>
-                      </span>
-                      <span className="text-li">
-                        Wir sind eine deutsche Agentur, mit einer festen
-                        Anschrift (Eschborn – in der Nähe von Frankfurt) mit
-                        einem deutschen Bankkonto. Des Weiteren bieten wir auch PayPal als Zahlungsmethode an.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="flex aboutcenter">
-            <div className="we-left">
-              <div
-                className="heading-sec wow animate__fadeInUp"
-                data-wow-duration="2s"
-              >
-                <p>
-                  Wir freuen uns,
-                  wenn Sie uns direkt per Email oder noch besser telefonisch
-                  kontaktieren. Ein kurzer gegenseitiger Austausch trägt in
-                  aller Regel enorm zur Vertrauensbildung bei. Selbst wenn Sie
-                  sich am Ende nicht für uns entscheiden, können wir Ihnen gerne
-                  auch ein paar hilfreiche Empfehlungen und Tipps für Ihre
-                  wissenschaftliche Arbeit geben.
-                </p>
-              </div>
-            </div>
-            <div className="we-right">
-              <div className="we-img">
-                <Image
-                  src={we_1}
-                  alt="we-1"
-                  className="wow animate__fadeInUp"
-                  data-wow-delay="0s"
-                  data-wow-duration="2s"
-                ></Image>
-              </div>
             </div>
           </div>
         </div>
@@ -705,6 +474,298 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="pricing-sec" id="CALCULATOR">
+        <div className="container">
+          <div className="flex">
+            <div className="pricing-left">
+              <div className="pl-text">
+                <div className="img-pl">
+                  <Image src={pp_img} alt="pp-img"></Image>
+                </div>
+                <div className="slider-pl">
+                  <div className="testimonial-box wow animate__fadeInUp">
+                    <Slider_home />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="pricing-right">
+              <div
+                className="get-box wow animate__fadeInUp"
+                data-wow-delay="0s"
+                data-wow-duration="2s"
+              >
+                <h3>Preisrechner</h3>
+                <form onSubmit={sendEmail}>
+                  <div className="input-box">
+                    <label>Thema</label>
+                    <Select
+                      id="typeitem"
+                      type="string"
+                      options={options}
+                      name="thema"
+                      required
+                      onChange={(e) => {
+                        setvalue6(e.labe);
+                        setvalue1(e.value);
+                      }}
+                      placeholder="Bitte wählen"
+                    />
+                  </div>
+                  <div className="haldinput">
+                    <div className="input-box half">
+                      <label>Anzahl Seiten</label>
+                      <input
+                        type="number"
+                        name="anzahlseiten"
+                        id="counts"
+                        placeholder="Seitenzahl insgesamt"
+                        min="0"
+                        onChange={(e) => setvalue2(e.target.value)}
+                        value2={value2}
+                        required
+                      />
+                    </div>
+                    {/* adding input values */}
+                    <div className="input-box half">
+                      <label>Insgesamt</label>
+                      <input
+                        type="text"
+                        name="insgesamt"
+                        id="counts"
+                        value={value6 * value2 + " Є"}
+                        onChange={(e) => console.log(setvalue4(value6 * value2))}
+                      />
+                    </div>
+                  </div>
+                  <div className="input-box">
+                    <label>Name</label>
+                    <input
+                      type="string"
+                      name="name"
+                      required
+                      id="counts"
+                      onChange={(e) => setvalue3(e.target.value)}
+                    />
+                  </div>
+                  <div className="input-box">
+                    <label>E-Mail</label>
+                    <input
+                      type="string"
+                      name="email"
+                      required
+                      id="counts"
+                      value={value5}
+                      onChange={(e) => setvalue5(e.target.value)}
+                    />
+                  </div>
+                  <div className="input-box">
+                    <label>E-Mail</label>
+                    <input
+                      type="string"
+                      name="email"
+                      required
+                      id="counts"
+                      value={value8}
+                      onChange={(e) => setvalue8(e.target.value)}
+                    />
+                  </div>
+                  <div className="text-policy">
+                    <input
+                      type="checkbox"
+                      name="email"
+                      required
+                      id="counts"
+                    />
+                  Ich habe die Datenschutzerklärung gelesen und akzeptiert.
+                  </div>
+                  <div className="sub-btn">
+                    <button
+                      style={{ marginLeft: "10px" }}
+                      className="btn-primary ml-5"
+                      id="calculate"
+                      type="submit"
+                    >
+                      Senden
+                    </button>
+                  </div>
+                </form>
+                <p className="messagearea">{statusMessage}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="amazing-sec" id="UEBERUNS">
+        <div className="container">
+          <div className="flex">
+            <div className="we-left full">
+              <div
+                className="heading-sec wow animate__fadeInUp"
+                data-wow-duration="2s"
+              >
+                <h2>
+                  <span>ÜBER UNS</span>
+                </h2>
+                <p>
+                  Bei der Vielzahl der Webseiten zum Thema Ghostwriting
+                  empfinden viele Kunden die Suche nach der richtigen Agentur
+                  oftmals sehr frustrierend. Daher zeige ich Ihnen nun ein paar
+                  Vorteile, die ich Ihnen bieten kann:
+                </p>
+                <div className="pro-ul">
+                  <ul
+                    className="wow animate__fadeInUp"
+                    data-wow-delay=".0s"
+                    data-wow-duration="2.2s"
+                  >
+                    <li>
+                      <span>
+                        <i className="fas fa-check-circle"></i>
+                      </span>
+                      <span className="text-li">
+                        Bei uns gibt es keine Massenabfertigung. Wir sind ein
+                        kleiner, ausgewählter Autorenkreis, bei dem jeder Autor
+                        nach seinem Masterabschluss noch eine Vielzahl weiterer
+                        Bachelorarbeiten und Masterarbeiten geschrieben hat.
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="fas fa-check-circle"></i>
+                      </span>
+                      <span className="text-li">
+                        Bei uns gibt es keinen Agenturaufschlag, sodass wir
+                        Ihnen das Schreiben Ihrer wissenschaftlichen Arbeit in
+                        der Regel für einen Preis von ca. 35-45 EUR pro
+                        Textseite anbieten können.
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="fas fa-check-circle"></i>
+                      </span>
+                      <span className="text-li">
+                        Überarbeitungen (beispielsweise nach Ihrer Rücksprache mit dem
+                        Dozenten) sind in unseren Preisen enthalten. Jeder Auftrag
+                        wird mit einer Plagiatsprüfung ausgeliefert
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="fas fa-check-circle"></i>
+                      </span>
+                      <span className="text-li">
+                        Ein wichtiges Abgrenzungskriterium zu vielen anderen
+                        Agenturen besteht darin, dass bei uns niemals hohe Raten
+                        zu zahlen sind. In den seltensten Fällen werden von uns
+                        Raten von mehr als 300 EUR* in Rechnung gestellt. Dies
+                        gibt Ihnen die Möglichkeit, jederzeit die Kontrolle über
+                        den Ablauf zu haben und verringert Ihre finanzielle
+                        Belastung.
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="fas fa-check-circle"></i>
+                      </span>
+                      <span className="text-li">
+                        Nicht bei jeder Agentur können Sie mit Ihrem Autor telefonieren. Unser Modell sieht vor, dass Sie sich vor, während und auch nach der Bearbeitungszeit direkt mit uns austauschen können.
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="fas fa-check-circle"></i>
+                      </span>
+                      <span className="text-li">
+                        Wir sind eine deutsche Agentur, mit einer festen
+                        Anschrift (Eschborn – in der Nähe von Frankfurt) mit
+                        einem deutschen Bankkonto. Des Weiteren bieten wir auch PayPal als Zahlungsmethode an.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="flex aboutcenter">
+            <div className="we-left">
+              <div
+                className="heading-sec wow animate__fadeInUp"
+                data-wow-duration="2s"
+              >
+                <p>
+                  Wir freuen uns,
+                  wenn Sie uns direkt per Email oder noch besser telefonisch
+                  kontaktieren. Ein kurzer gegenseitiger Austausch trägt in
+                  aller Regel enorm zur Vertrauensbildung bei. Selbst wenn Sie
+                  sich am Ende nicht für uns entscheiden, können wir Ihnen gerne
+                  auch ein paar hilfreiche Empfehlungen und Tipps für Ihre
+                  wissenschaftliche Arbeit geben.
+                </p>
+              </div>
+            </div>
+            <div className="we-right">
+              <div className="we-img">
+                <Image
+                  src={we_1}
+                  alt="we-1"
+                  className="wow animate__fadeInUp"
+                  data-wow-delay="0s"
+                  data-wow-duration="2s"
+                ></Image>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="amazing-sec" id="FAQ">
+        <div className="container">
+            <div className="heading-sec wow animate__fadeInUp" data-wow-duration="2s">
+              <h2>
+                <span>FAQ</span>
+              </h2>
+            </div>
+            <div className="faqcon">
+              <Collapsible classname="wow animate__fadeInUp" data-wow-duration="2s" trigger="Wie läuft das mit den Zahlungen und dem Versand des Textes? ">
+                    <p>Anbei ein beispielhafter Ablauf für eine Thesis mit 40 Textseiten:</p>
+                    <ul>
+                      <li>Einigung auf das Thema.</li>
+                      <li>Anzahlung für die Gliederung oder das Exposé.</li>
+                      <li>Erstellung Gliederung bzw. Exposé durch mich.</li>
+                      <li>Abstimmung der Gliederung bzw. des Exposés durch Sie mit der Hochschule.</li>
+                      <li>Start des Schreibprozess: 1. Anzahlung für 25% der Arbeit.</li>
+                      <li>Erstellung von 25% der Thesis durch mich und Versand an Sie.</li>
+                      <li>Sie prüfen die erste Lieferung. Passt alles? Dann senden Sie die nächsten 25%. Bei Rückfragen und Korrekturwünschen schreiben Sie mir eine Mail oder wieder telefonieren.</li>
+                      <li>Danach ginge es immer in 25%-Schritten weiter....</li>
+                    </ul>
+              </Collapsible>
+              <Collapsible classname="wow animate__fadeInUp" data-wow-duration="2s" trigger="Kann ich den Auftrag zwischenzeitlich abbrechen? ">
+                    <p>Sie können den Auftrag nach jeder Teillieferung abbrechen und die Hausarbeit /Thesis wieder selbst in die Hand nehmen.</p>
+              </Collapsible>
+              <Collapsible classname="wow animate__fadeInUp" data-wow-duration="2s" trigger="Welche Note kann ich erwarten?">
+                    <p>Eine Hausarbeit oder Thesis ist ein hochindividuelles Produkt. Die Bewertung der Arbeit hängt an einer Vielzahl von Faktoren: Qualität der Arbeit, Anspruch der Hochschule, individuelle Bewertung des Professors, uvm. Im Gegensatz zu einigen anderen Wettbewerbern gebe ich Ihnen daher von Anfang an keine Notengarantie. Bei mir gibt es auch keine unterschiedlichen Qualitätsniveaus ("Budget", "Premium", etc.). Dies sind alles Werbemaßnahmen, die nur ein Ziel haben: möglichst viel Geld für die gleiche Leistung von Ihnen zu erhalten. Sie erhalten von mir eine saubere akademische Arbeit, die alle wissenschaftlichen Standards entspricht. Diejenigen Kunden, die mir Ihre Note mitgeteilt haben, haben mit guten oder sehr guten Noten bestanden. Ich habe im Übrigen eine Anzahl von Kunden, die mich immer wieder beauftragen oder weiterempfehlen.</p>
+              </Collapsible>
+              <Collapsible classname="wow animate__fadeInUp" data-wow-duration="2s" trigger="Werde ich Eigentümer der Nutzungsrechte an den verfassten Texten?">
+                    <p>Ich verfasse honorargebundene Werke. Sie erwerben das Eigentum an den Nutzungsrechten.  Die weitere Verwendung der Nutzungsrechte bzw. wie Sie weiter mit dem Werk verfahren, obliegt ausschließlich Ihrer Verantwortung. Ich verpflichte mich, die für Sie verfassten Texte weder für andere Kunden noch als Referenz zur Kundenwerbung zu veröffentlichen.</p>
+              </Collapsible>
+              <Collapsible classname="wow animate__fadeInUp" data-wow-duration="2s" trigger="Wie bleibe ich über den Bearbeitungsstand meines Auftrages auf dem Laufenden?">
+                    <p>Wir vereinbaren regelmäßige Teillieferungen, sodass Sie stets über den gegenwärtigen Stand der Bearbeitung auf dem Laufenden sind. Selbstverständlich können wir vor, während und nach der Bearbeitung miteinander telefonieren oder uns via Whatsapp oder Email austauschen.</p>
+              </Collapsible>
+              <Collapsible classname="wow animate__fadeInUp" data-wow-duration="2s" trigger="Kann man sich auf die Bewertungen für andere Agenturen im Internet verlassen?">
+                    <p>Bei vielen Dienstleistungen kann man im Internet nach Rezensionen suchen. Beim Ghostwriting ist es dies im Allgemeinen recht schwierig. In der Regel legen Kunden, die für ihre wissenschaftliche Arbeit einen Ghostwriter beauftragt haben, Wert auf absolute Diskretion. Auch wenn man manchmal in Foren entsprechende „Erfahrungsberichte“ liest, ist in den allermeisten Fällen von versteckter, bezahlter Eigenwerbung der Anbieter auszugehen. Beim Thema Ghostwriting können Sie sich nicht auf Bewertungen verlassen. </p>
+              </Collapsible>
+              <Collapsible classname="wow animate__fadeInUp" data-wow-duration="2s" trigger="Welche Garantie habe ich, dass die Arbeit den Anforderungen meines Professors / meiner Professorin erfüllt?">
+                    <p>Ich verfüge über einen jahrelangen Erfahrungsschatz im Ghostwriting und betreibe das Schreiben wissenschaftlicher Arbeit in Vollzeit. Ich habe daher bereits eine sehr große Menge an weitergeleiteten Feedbacks von Professoren, Dozenten und Betreuern erhalten. Diese Feedbacks haben zu einer steten Verbesserung meiner akademischen Arbeiten geführt. Aus diesem Grund bin ich stolz darauf, dass meine Kunden ihre Arbeiten ausnahmslos mit guten bis sehr guten Bewertungen bestanden haben. </p>
+              </Collapsible>
+              <Collapsible classname="wow animate__fadeInUp" data-wow-duration="2s" trigger="Gibt es noch andere gute Agenturen, die ihr mir empfehlen könnt?">
+                    <p>Es gibt spätestens seit der Corona-Pandemie eine schier unglaubliche Vielzahl an "Anbietern" von Ghostwriting. Nicht hinter jeder Ghostwriting-Webseite steckt eine echte Agentur. Nicht selten sind die Webseiten in Drittländern wie Russland gehostet. Dazu kommt, dass sich sehr viele Agenturen deutlich größer präsentieren, als sie es tatsächlich sind. Es gibt dennoch diverse, seriöse Agenturen. Aus meiner Sicht sind dies gegenwärtig Ghost & Write sowie TextundWissenschaft. Es mag mit Sicherheit noch mehr gute Agenturen geben. Es gibt aber auch eine sehr große Anzahl an "Agenturen", die ihren Autoren lediglich 10 EUR pro Seite anbieten. Ich kann Ihnen versprechen, dass kein Akademiker für 10 EUR die Seite etwas schreibt. Vermutlich erhalten Sie Kopien bestehender Arbeiten und gehen damit ein sehr großes Risiko ein.</p>
+              </Collapsible>              
+            </div>
+        </div>
+      </section>  
       <section className="contactform" id="KONTAKT">
         <div className="container">
           <div className="flex">
@@ -755,27 +816,6 @@ const Home = () => {
                     />
                   </div>
                   <div className="data-policy">
-                    <p>Bitte wählen Sie aus, über welchen Weg wir Sie kontaktieren dürfen:</p>
-                    <div><input
-                      type="checkbox"
-                      name="emailcontact"
-                      onChange={(e) => setcontvalue5(e.target.value)}
-                      value={form5}
-                      required
-                      id="Email"
-                    />
-                    <label for="Email">Email</label>
-                    </div>
-                    <div><input
-                      type="checkbox"
-                      name="telefoncontact"
-                      onChange={(e) => setcontvalue6(e.target.value)}
-                      value={form6}
-                      id="Telefon"
-                    />
-                    <label for="Telefon">Telefon</label>
-                    </div>
-                    <p>Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@enigma-writing.de widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer Datenschutzerklärung.</p>
                     <p><input
                       type="checkbox"
                       name="validation"
@@ -783,7 +823,8 @@ const Home = () => {
                       value={form6}
                       required
                       id="Datenschutz"
-                    /><label for="Datenschutz">Datenschutz bestätigen</label>
+                    /><label for="Datenschutz">Ich stimme der elektronischen Verarbeitung meiner Daten zum Zweck der Bearbeitung meiner Anfrage zu. Die <Link href="/datenschutzerklarung"
+                    ><a target="_blank">Datenschutzerklärung</a></Link> habe ich gelesen und stimme dieser zu.</label>
                     </p>
                   </div>
                   <div className="sub-btn">

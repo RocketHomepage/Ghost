@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://enigma-writing.de/
+
+# Sitemaps
+Sitemap: https://enigma-writing.de/sitemap.xml

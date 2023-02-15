@@ -55,12 +55,7 @@ const header = () => {
                   <a>HOME</a>
                 </Link>
               </li>
-              <li>
-                <Link href="/#UEBERUNS">
-                  <a>ÜBER UNS</a>
-                </Link>
-              </li>
-              <li>
+               <li>
                 <Link href="/#PREISE">
                   <a>PREISE</a>
                 </Link>
@@ -68,6 +63,21 @@ const header = () => {
               <li>
                 <Link href="/#LEISTUNGEN">
                   <a>LEISTUNGEN</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#CALCULATOR">
+                  <a>RECHNER</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#UEBERUNS">
+                  <a>ÜBER UNS</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#FAQ">
+                  <a>FAQ</a>
                 </Link>
               </li>
               <li>
