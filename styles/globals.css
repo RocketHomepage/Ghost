@@ -3218,6 +3218,8 @@ span.fbdes-text {
     display: block;
     border: 1px var(--primary_color) solid;
     margin-top: 16px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .Collapsible__trigger {
