@@ -473,6 +473,10 @@ a.len-btn i {
 
 }
 
+.input-box .message {
+    height: 100px;
+}
+
 .data-policy {
     padding-left: 24px;
 }

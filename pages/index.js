@@ -538,34 +538,37 @@ const Home = () => {
                       />
                     </div>
                   </div>
-                  <div className="input-box">
-                    <label>Name</label>
-                    <input
-                      type="string"
-                      name="name"
-                      required
-                      id="counts"
-                      onChange={(e) => setvalue3(e.target.value)}
-                    />
+                  <div className="haldinput">
+                    <div className="input-box half">
+                      <label>Name</label>
+                      <input
+                        type="string"
+                        name="name"
+                        required
+                        id="counts"
+                        onChange={(e) => setvalue3(e.target.value)}
+                      />
+                    </div>
+                    <div className="input-box half">
+                      <label>E-Mail</label>
+                      <input
+                        type="string"
+                        name="email"
+                        required
+                        id="counts"
+                        value={value5}
+                        onChange={(e) => setvalue5(e.target.value)}
+                      />
+                    </div>
                   </div>
                   <div className="input-box">
-                    <label>E-Mail</label>
+                    <label>Ihre Nachricht</label>
                     <input
                       type="string"
-                      name="email"
+                      name="Ihre Nachricht"
                       required
-                      id="counts"
-                      value={value5}
-                      onChange={(e) => setvalue5(e.target.value)}
-                    />
-                  </div>
-                  <div className="input-box">
-                    <label>E-Mail</label>
-                    <input
-                      type="string"
-                      name="email"
-                      required
-                      id="counts"
+                      className="message"
+                      id="messagebig"
                       value={value8}
                       onChange={(e) => setvalue8(e.target.value)}
                     />
