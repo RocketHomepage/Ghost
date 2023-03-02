@@ -769,7 +769,7 @@ const Home = () => {
             </div>
         </div>
       </section>  
-      <section className="contactform" id="KONTAKT">
+      {/* <section className="contactform" id="KONTAKT">
         <div className="container">
           <div className="flex">
             <div className="pricing-right">
@@ -798,7 +798,6 @@ const Home = () => {
                       required
                     />
                   </div>
-                  {/* adding input values */}
                   <div className="input-box">
                     <label>Telefon</label>
                     <input
@@ -844,7 +843,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <ScrollToTop></ScrollToTop>
     </>
   );
