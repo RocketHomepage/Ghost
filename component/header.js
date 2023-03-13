@@ -3,6 +3,7 @@ import Image from "next/image";
 import Logo from "../Images/logo.png";
 import Menu from "../Images/menu.png";
 import React, { useEffect } from "react";
+import Script from 'next/script'
 
 const openSearch = (e) => {
   document.getElementById("myOverlay").style.display = "block";
@@ -19,6 +20,12 @@ const header = () => {
         window.removeEventListener('scroll', isSticky);
     };
 });
+
+(function(w,s,o,g,r,a,m){w['ChatBot4YouElement']=r;w[r]=w[r]||function(){
+(w[r].q=w[r].q||[]).push(arguments)},w[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//bot.chatbot4you.de/bot.min.js','cb4u');
+cb4u("init", "672433ce9ba7dfa6c0c1bcc1bebe1be6");
 
        
 /* Method that will fix header after a specific scrollable */
