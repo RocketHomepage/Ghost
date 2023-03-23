@@ -81,11 +81,6 @@ const header = () => {
                   <a>FAQ</a>
                 </Link>
               </li>
-              <li>
-                <Link href="/#KONTAKT">
-                  <a>KONTAKT</a>
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

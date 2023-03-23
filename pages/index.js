@@ -173,14 +173,6 @@ const Home = () => {
                   >
                     Preise
                   </a>
-                  <a
-                    href="#KONTAKT"
-                    className="len-btn wow animate__fadeInUp"
-                    data-wow-delay=".5s"
-                    data-wow-duration="2s"
-                  >
-                    Kontakt <i className="fal fa-arrow-right"></i>
-                  </a>
                 </div>
               </div>
             </div>
