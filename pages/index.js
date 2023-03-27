@@ -53,7 +53,7 @@ const Home = () => {
   const [form6, setcontvalue6] = useState("");
 
   const options = [
-    { labe: "35", label: "Hausarbeit / Seminararbeit", value: " Hausarbeit / Seminararbeit" },
+    { labe: "30", label: "Hausarbeit / Seminararbeit", value: " Hausarbeit / Seminararbeit" },
     {
       labe: "39",
       label: "Bachelorthesis",
@@ -525,7 +525,7 @@ const Home = () => {
                         type="text"
                         name="insgesamt"
                         id="counts"
-                        value={value6 * value2 + " Є"}
+                        value={value6 * value2 + " Є*"}
                         onChange={(e) => console.log(setvalue4(value6 * value2))}
                       />
                     </div>
