@@ -340,6 +340,7 @@ a.len-btn i {
 .pricing-sec .flex {
     margin: 0px -7.5px;
     align-items: center;
+    justify-content: center;
 }
 
 .container {

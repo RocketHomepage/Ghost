@@ -166,12 +166,12 @@ const Home = () => {
                 </p>
                 <div className="btn-we">
                   <a
-                    href="#PREISE"
+                    href="#CALCULATOR"
                     className="get-btn btn-primary wow animate__fadeInUp"
                     data-wow-delay=".3s"
                     data-wow-duration="2s"
                   >
-                    Preise
+                    Preisrechner und Kontaktformular
                   </a>
                 </div>
               </div>
@@ -285,7 +285,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <p
+          {/* <p
             className="wow animate__fadeInUp"
             data-wow-delay=".1s"
             data-wow-duration="2.1s"
@@ -299,7 +299,7 @@ const Home = () => {
             Folgenden als Beispiel eine Preisübersicht erstellt, die die
             typischen Kosten für Mustervorlagen für Hausarbeiten, Bachelor- und
             Masterarbeiten veranschaulicht.“
-          </p>
+          </p> */}
           <p
             className="wow animate__fadeInUp"
             data-wow-delay=".1s"
@@ -469,7 +469,7 @@ const Home = () => {
       <section className="pricing-sec" id="CALCULATOR">
         <div className="container">
           <div className="flex">
-            <div className="pricing-left">
+            {/* <div className="pricing-left">
               <div className="pl-text">
                 <div className="img-pl">
                   <Image src={pp_img} alt="pp-img"></Image>
@@ -480,14 +480,14 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="pricing-right">
               <div
                 className="get-box wow animate__fadeInUp"
                 data-wow-delay="0s"
                 data-wow-duration="2s"
               >
-                <h3>Preisrechner</h3>
+                <h3>Preisrechner und Kontaktformular</h3>
                 <form onSubmit={sendEmail}>
                   <div className="input-box">
                     <label>Thema</label>
