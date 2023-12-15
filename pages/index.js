@@ -162,7 +162,7 @@ const Home = () => {
                   data-wow-delay=".2s"
                   data-wow-duration="2s"
                 >
-                  Stellen Sie uns auf die Probe und nutzen Sie unsere kostenlosen und unverbindlichen Beratungsmöglichkeiten per Telefon <Link href="tel:+498003880100">(0800 388 011 0)</Link> oder E-Mail <Link href="mailto:info@enigma-writing.de">(info@enigma-writing.de)</Link>
+                  Stellen Sie uns auf die Probe und nutzen Sie unsere kostenlosen und unverbindlichen Beratungsmöglichkeiten per Telefon <Link href="tel:+498003880100">(0800-3880100)</Link> oder E-Mail <Link href="mailto:info@enigma-writing.de">(info@enigma-writing.de)</Link>
                 </p>
                 <div className="btn-we">
                   <a
