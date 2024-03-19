@@ -41,6 +41,7 @@ const Home = () => {
   const [value4, setvalue4] = useState("");
   const [value5, setvalue5] = useState("");
   const [value6, setvalue6] = useState("");
+  const [value7, setvalue7] = useState("");
   const [value8, setvalue8] = useState("");
 
   //for second form
@@ -53,7 +54,7 @@ const Home = () => {
   const [form6, setcontvalue6] = useState("");
 
   const options = [
-    { labe: "30", label: "Hausarbeit / Seminararbeit", value: " Hausarbeit / Seminararbeit" },
+    { labe: "30", label: "Hausarbeit / Seminararbeit", value: "Hausarbeit / Seminararbeit" },
     {
       labe: "39",
       label: "Bachelorthesis",
@@ -137,6 +138,16 @@ const Home = () => {
     });
   };
 
+
+  // Thema Default Value Set 
+  const [defaultValue, setDefaultValue] = useState(null);
+  const DefaultValueSet = (selectedValue) => {
+    const defaultOption = options.find(option => option.value === selectedValue);
+    setDefaultValue(defaultOption);
+    setvalue6(defaultOption.labe);
+    setvalue1(defaultOption.value);
+  };
+  
   return (
     <>
       <Head>
@@ -218,7 +229,7 @@ const Home = () => {
                   </li>
                 </ul>
                 <div className="price-btn">
-                  <a href="#" className="len-btn btn-primary">
+                  <a href="#CALCULATOR" className="len-btn btn-primary"  onClick={() => DefaultValueSet("Hausarbeit / Seminararbeit")}>
                     Anfrage <i className="fal fa-arrow-right"></i>
                   </a>
                 </div>
@@ -248,7 +259,7 @@ const Home = () => {
                   </li>
                 </ul>
                 <div className="price-btn">
-                  <a href="#" className="len-btn btn-primary">
+                  <a href="#CALCULATOR" className="len-btn btn-primary" onClick={() => DefaultValueSet("Bachelorthesis")}>
                     Anfrage <i className="fal fa-arrow-right"></i>
                   </a>
                 </div>
@@ -278,7 +289,7 @@ const Home = () => {
                   </li>
                 </ul>
                 <div className="price-btn">
-                  <a href="#" className="len-btn btn-primary">
+                  <a href="#CALCULATOR" className="len-btn btn-primary" onClick={() => DefaultValueSet("Masterthesis")}>
                     Anfrage <i className="fal fa-arrow-right"></i>
                   </a>
                 </div>
@@ -497,9 +508,9 @@ const Home = () => {
                       options={options}
                       name="thema"
                       required
+                      value={defaultValue}
                       onChange={(e) => {
-                        setvalue6(e.labe);
-                        setvalue1(e.value);
+                        DefaultValueSet(e.value);
                       }}
                       placeholder="Bitte wählen"
                     />
@@ -553,6 +564,17 @@ const Home = () => {
                       />
                     </div>
                   </div>
+                  <div className="input-box">
+                      <label>Telephone</label>
+                      <input
+                        type="string"
+                        name="telephone"
+                        required
+                        id="counts"
+                        value={value7}
+                        onChange={(e) => setvalue7(e.target.value)}
+                      />
+                    </div>
                   <div className="input-box">
                     <label>Ihre Nachricht</label>
                     <input
