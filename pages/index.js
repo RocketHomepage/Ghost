@@ -83,7 +83,7 @@ const Home = () => {
           // console.log(error.text);
           setStatusMessage(`${error.text} happened`);
         }
-      )
+      );
   };
 
   
@@ -525,7 +525,7 @@ const Home = () => {
                         placeholder="Seitenzahl insgesamt"
                         min="0"
                         onChange={(e) => setvalue2(e.target.value)}
-                        value2={value2}
+                        value={value2}
                         required
                       />
                     </div>
@@ -549,6 +549,7 @@ const Home = () => {
                         name="name"
                         required
                         id="counts"
+                        value={value3}
                         onChange={(e) => setvalue3(e.target.value)}
                       />
                     </div>
@@ -568,7 +569,7 @@ const Home = () => {
                       <label>Telephone</label>
                       <input
                         type="string"
-                        name="telephone"
+                        name="telefon"
                         required
                         id="counts"
                         value={value7}
@@ -579,7 +580,7 @@ const Home = () => {
                     <label>Ihre Nachricht</label>
                     <input
                       type="string"
-                      name="Ihre Nachricht"
+                      name="nachricht"
                       required
                       className="message"
                       id="messagebig"
