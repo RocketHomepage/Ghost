@@ -566,7 +566,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="input-box">
-                      <label>Telephone</label>
+                      <label>Telefon</label>
                       <input
                         type="string"
                         name="telefon"
