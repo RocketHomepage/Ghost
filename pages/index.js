@@ -215,13 +215,13 @@ const Home = () => {
                   <h5>Hausarbeit </h5>
                 </div>
                 <div className="price-number">
-                  <p>Ab € 450*</p>
+                  <p>Ca. € 300*</p>
                 </div>
                 <div className="price-divider-separator"></div>
                 <ul className="price-list">
                   <li>
                     <i className="fas fa-check-circle"></i>
-                    <p>Umfang 15 Seiten</p>
+                    <p>Umfang 10 Seiten</p>
                   </li>
                   <li>
                     <i className="fas fa-check-circle"></i>
@@ -245,7 +245,7 @@ const Home = () => {
                   <h5>Bachelorarbeit (literaturbasiert) </h5>
                 </div>
                 <div className="price-number">
-                  <p>Ab € 1560*</p>
+                  <p>Ca. € 1560*</p>
                 </div>
                 <div className="price-divider-separator"></div>
                 <ul className="price-list">
@@ -275,7 +275,7 @@ const Home = () => {
                   <h5>Masterarbeit (inkl. Interview)</h5>
                 </div>
                 <div className="price-number">
-                  <p>Ab € 2250*</p>
+                  <p>Ca. € 2250*</p>
                 </div>
                 <div className="price-divider-separator"></div>
                 <ul className="price-list">
